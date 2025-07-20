@@ -1,0 +1,168 @@
+{
+  "position": "top",
+  "layer": "top",
+
+  // Desktop Bar
+  "modules-left": ["custom/launcher", "custom/playerctl", "custom/playerlabel"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "custom/updates-pacman-aur", "custom/brightness", "pulseaudio", "clock"],
+
+  // Laptop Bar
+  /*
+  "modules-left": ["custom/launcher", "custom/playerctl", "custom/playerlabel"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "custom/updates-pacman-aur", "backlight", "pulseaudio", "battery", "network", "clock"],
+  */
+
+
+  // Modules configuration
+
+  "custom/launcher": {
+    "format": "",
+    //"format": "",
+    "on-click": "~/.config/bemenu/evocarbon/run.sh",
+    "tooltip": "false"
+  },
+  "clock": {
+    "format": "<span size='12000'></span> {:%I:%M %p}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "~/.config/wofi/evocarbon/wofi-power-menu.sh",
+  },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "",
+    },
+    "sort-by-number": true,
+  },
+  "custom/playerctl": {
+    "format": "{icon}",
+    "return-type": "json",
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "format-icons": {
+      "Playing": "<span foreground='#46c880'>󰐌 </span>",
+      "Paused": "<span foreground='#cdd6f4'>󰏥 </span>",
+    },
+  },
+  "custom/playerlabel": {
+    "format": "<span>{}</span>",
+    "return-type": "json",
+    "max-length": 48,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{title}} - {{markup_escape(artist)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next",
+  },
+  "network": {
+    "format-wifi": "<span size='13000'>{icon}</span>",
+    "format-ethernet": "<span size='13000'>󰈀</span>",
+    "format-linked": "<span size='13000'>󰈀</span>",
+    "format-disconnected": "<span size='13000'>󰤮</span>",
+    "tooltip-format-wifi": "Connected to: {essid}\nSignal strength: {signalStrength}%",
+    "format-icons": ["󰤟","󰤢","󰤥","󰤨"],
+    "on-click": "xargs -a ~/.config/bemenu/evocarbon/config networkmanager_dmenu",
+    "on-click-right": "nm-connection-editor",
+  },
+  "pulseaudio": {
+    "format": "<span size='12000'>{icon}</span> {volume}%",
+    "format-muted": "<span size='12000' foreground='#ff7eb6'></span> {volume}%",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""],
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+  },
+  "custom/updates-pacman-aur":{
+      "exec-on-event": true,
+      "format": "<span size='12000'></span> {}",
+      "exec" : "$HOME/.config/waybar/scripts/updates-pacman-aur.sh",
+      "interval": 300,
+      "on-click": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'sudo pacman -Syu ; echo Done - Press enter to exit; read _'",
+      "on-click-right": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'yay -Sua --sudoloop ; echo Done - Press enter to exit; read _'",
+      "on-click-middle": "kitty -c .config/kitty/evocarbon/kitty.conf sh -c 'yay -Syu --sudoloop ; echo Done - Press enter to exit; read _'",
+  },
+  "tray": {
+      "icon-size": 16,
+      "spacing": 8,
+  },
+
+
+  // Desktop only
+
+  "custom/brightness": {
+      // Controls brightness of external display (hdmi/dp) via 'ddcutil'
+      // User needs to install the 'ddcutil' and 'i2c-tools' packages, and be part of the i2c group
+      "format": "{}",
+      "exec": "$HOME/.config/waybar/scripts/external-brightness.sh",
+      "exec-on-event": false,
+      "interval": "once",
+      "signal": 1,
+      // Change `--bus X` below with the number of your monitor bus, detected with `ddcutil detect`
+      "on-scroll-up": "ddcutil setvcp 10 + 10 --sleep-multiplier .1 --bus 3 --noverify; pkill -SIGRTMIN+1 waybar", 
+      "on-scroll-down": "ddcutil setvcp 10 - 10 --sleep-multiplier .1 --bus 3 --noverify; pkill -SIGRTMIN+1 waybar",
+      // Needs wlsunset to set night light
+      "on-click": "pkill wlsunset || wlsunset -T 5500",
+  },
+
+
+  // Laptop only
+
+  "backlight": {
+    "format": "<span size='12000'>{icon}</span> {percent}% ",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    // Needs wlsunset to set night light
+    "on-click": "pkill wlsunset || wlsunset -T 5500",
+  },
+  "battery": {
+    "states": {
+      "critical": 15,
+    },
+    "format": "<span size='13000'>{icon} </span>{capacity}%",
+      "format-warning": "<span size='13000'>{icon} </span>{capacity}%",
+      "format-critical": "<span size='13000'>{icon} </span>{capacity}%",
+      "format-charging": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+      "format-plugged": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+      "format-full": "<span size='13000' foreground='#8cb6ff'>󱈏 </span>{capacity}%",
+      "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰂂"],
+      "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
+  },
+
+
+  // More
+
+  "memory": {
+    "format": "󰍛 {}%",
+    "format-alt": "󰍛 {used}/{total} GiB",
+    "interval": 5,
+  },
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 5,
+  },
+  "disk": {
+    "format": "󰋊 {}%",
+    "format-alt": "󰋊 {used}/{total} GiB",
+    "interval": 20,
+    "path": "/"
+  },
+
+}
