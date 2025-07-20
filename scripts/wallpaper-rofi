@@ -4,16 +4,12 @@ WALL_DIR="$HOME/Wallpapers"
 THUMB_DIR="$HOME/.cache/wallthumbs"
 mkdir -p "$THUMB_DIR"
 
-# Generate thumbnails
+# Generate Rofi entries from existing thumbnails
 entries=""
 while IFS= read -r img; do
     name="$(basename "$img")"
     hash="$(sha1sum <<< "$img" | awk '{print $1}')"
     thumb="$THUMB_DIR/$hash.jpg"
-
-    if [ ! -f "$thumb" ]; then
-        magick "$img" -resize 256x144^ -gravity center -extent 256x144 -quality 90 "$thumb"
-    fi
 
     entries+="$name\x00icon\x1f$thumb\n"
 done < <(find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \))
@@ -51,8 +47,7 @@ if [ -n "$chosen" ]; then
     swww img "$full" --transition-type grow --transition-duration 1
 fi
 
-
+# Update hyprlock.conf
 wallpath=$(swww query | grep -oP 'image: \K.*')
-
-# Replace the path line in hyprlock.conf
 sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
+
