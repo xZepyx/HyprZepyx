@@ -1,0 +1,97 @@
+;; TODO:
+;; - Add visualizer feature under the album art
+
+
+;; time keeper
+(defpoll time :interval "5s"
+  `date +'{
+    "hour":"%H",
+    "min":"%M",
+    "month":"%B",
+    "date":"%d",
+    "year":"%Y"
+   }'`
+)
+
+;; sysmon watchers
+(defpoll cpubar :interval "1s" `scripts/sysmon-bar --cpu`)
+
+;; spotify stuff
+(defpoll spotify-title :interval "1s" `scripts/spotify-watcher --title`)
+(defpoll spotify-artist :interval "1s" `scripts/spotify-watcher --artist`)
+(defpoll spotify-art :interval "1s" `scripts/spotify-watcher --get-art`)
+
+(defwidget left_group []
+    (box :orientation "vertical" :class "white-main" :valign "center" :spacing -80
+        
+        ;; clock and date
+        (box :orientation "vertical" :spacing -70 :valign "center"
+            (label :class "clock" :halign "start" :text "${time.hour}:${time.min}")
+            (label :class "date" :halign "start" :text "${time.month} ${time.date}, ${time.year}"))
+
+        ;; system monitor
+        (box :orientation "vertical" :valign "start"
+            
+            
+            ;; cpu
+            (box :orientation "horizontal" :class "sysmon-item" :halign "start" 
+                
+                (label :class "sysmon-bar" :halign "start" :text "${cpubar}"))
+
+1
+            (label :class "sysmon-item sysmon-label" :halign "start" :text "   ${EWW_TEMPS.CORETEMP_CORE_0}°C") ;; temp
+            (label :class "sysmon-item sysmon-label" :halign "start" :text "   ${round(EWW_NET.wlp45s0.NET_UP / 1000, 1) } kB/s") ;; net up
+            (label :class "sysmon-item sysmon-label" :halign "start" :text "   ${round(EWW_NET.wlp45s0.NET_DOWN / 1000, 1) } kB/s") ;; net down
+        )
+    )
+)
+
+(defwidget right_group []
+    (box :orientation "vertical" :class "white-main" :valign "center" :spacing 1
+
+        ;; greeter
+        (box :orientation "vertical" :halign "end" :spacing -20
+            (label :class "greeter" 
+                :text {
+                    time.hour >= 3 && time.hour < 11 ? "Good Morning," :
+                    time.hour >= 11 && time.hour < 18 ? "Good Afternoon," :
+                    time.hour >= 18 && time.hour < 24  ? "Good Evening," : "Good Evening,"
+                }
+            )
+            (label :class "user" :halign "end" :text "xZepyx_")
+        )
+
+        ;; spotify
+        (box :orientation "horizontal" :halign "end" :space-evenly "false"
+             :vexpand "false" :hexpand "false"
+            
+            (box :orientation "vertical" :spacing -140
+                (label :class "spotify-title" :halign "end" :text "${spotify-title ?: 'N/A'}")
+                (label :class "spotify-artist" :halign "end" :text "${spotify-artist ?: (spotify-title != '' ? 'Advertisement' : 'Spotify is Offline')}")
+            )
+            (box :class "spotify-art" 
+                 :style "background-image: url('${spotify-art}'), url('images/spotify-art-default.png');")
+        )
+    )
+)
+
+;; windows ---------------------------------------------------------------------
+
+(defwindow left_window
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry :x "7%" :y "4%" :width "30%" :height "80%")
+  (left_group)
+)
+
+(defwindow right_window
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry :x "63%" :y "4%" :width "30%" :height "80%")
+  (right_group)
+)
+

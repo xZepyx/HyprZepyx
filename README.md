@@ -11,20 +11,20 @@ Designed and maintained by **Astryxz**.
 
 > All images are located in the repository and referenced below.
 
-### TTY Look
-![FastF-TTY](.previews/FastF-TTY.png)
+### Code
+![Code](.previews/Code.png)
 
 ### Hyprlock (Lockscreen)
-![Hyprlock](.previews/hyprlock_screenshot.png)
+![Hyprlock](.previews/new/hyprlock-new.png)
 
 ### App Launcher (Rofi)
-![Rofi Apps](.previews/Rofi-Apps.png)
+![Rofi Apps](.previews/new/rofi-op.png)
 
 ### Terminal Layout
 ![Terminal](.previews/Terminal.png)
 
 ### Wallpaper Switcher
-![Wallpaper Switcher](.previews/Wallpaper-Switcher.png)
+![Wallpaper Switcher](.previews/new/NewWall.png)
 
 ### Waybar Layout
 ![Waybar](.previews/Waybar.png)
@@ -110,7 +110,7 @@ Designed and maintained by **Astryxz**.
 
 
 
-© 2025–2040 Aditya Yadav geltron103@gmail.com
+© 2025–2040 Aditya Yadav zepyxunderscore@gmail.com
 Licensed under GNU-GPLv3.
 You are free to copy, modify, and redistribute under the same license.
 

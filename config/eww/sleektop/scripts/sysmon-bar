@@ -1,0 +1,35 @@
+#!/bin/bash
+
+BAR_LENGTH=15
+
+FILL_CHAR="⣿"
+EDGE_CHAR="⣦"
+BLANK_CHAR="⣀"
+
+calc_bar() {
+    BAR_FILL=$(( $1 * $BAR_LENGTH / 100 ))
+
+    result=""
+    for ((i = 0; i < $BAR_FILL; i++)); do
+        result+="$FILL_CHAR"
+    done
+
+    if [ $BAR_LENGTH -gt $BAR_FILL ]; then result+="$EDGE_CHAR"; fi
+
+    for ((i = 1; i < $BAR_LENGTH - BAR_FILL; i++)); do
+        result+="$BLANK_CHAR"
+    done
+
+    echo $result
+}
+
+if [[ "$1" == "--cpu" ]]; then
+    CPU_USG=$(mpstat 1 1 | awk '/all/ {printf "%.0f\n", 100 - $NF; exit}')
+    calc_bar $CPU_USG
+elif [[ "$1" == "--ram" ]]; then
+    RAM_USG=$(( $(free | awk '/^Mem:/ {print $3}') * 100 / $(free | awk '/^Mem:/ {print $2}') ))
+    calc_bar $RAM_USG
+elif [[ "$1" == "--disk" ]]; then
+    DISK_USG=$(df / | awk 'NR==2 {print $5}' | sed 's/%//')
+    calc_bar $DISK_USG
+fi

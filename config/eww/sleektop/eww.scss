@@ -1,0 +1,68 @@
+$font-white: #dedede;
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+* { all: unset; animation: fade-in 1s ease-out;}
+
+.white-main {
+    font-family: Poppins;
+    color: $font-white
+}
+
+.clock {
+    font-weight: bold;
+    font-size: 10em;
+}
+
+.date {
+    font-size: 2em;
+    letter-spacing: 0.15em;
+}
+
+.greeter {
+    font-size: 4em;
+}
+
+.user {
+    font-size: 6em;
+    font-weight: bolder;
+}
+
+.sysmon, .spotify-title {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.spotify-artist {
+    @extend .spotify-title;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.spotify-art {
+    $art-size: 110px;
+    background-size: $art-size;
+	min-height: $art-size;
+	min-width: $art-size;
+	margin: 50px 0 50px 20px;
+	border-radius: 30px;
+}
+
+.sysmon-item {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+.sysmon-bar {
+    margin-left: -95px;
+    font-size: 1.4em;
+}
+
+.sysmon-label {
+    font-size: 2em;
+    font-weight: 500;
+}
+

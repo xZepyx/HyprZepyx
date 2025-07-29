@@ -1,0 +1,16 @@
+#!/bin/bash
+
+CFG="$HOME/.config/eww/sleektop"
+
+# Kill any running eww daemon first (optional but safer)
+pkill -f "eww --config $CFG daemon"
+
+# Start the Eww daemon using the correct config directory
+eww --config "$CFG" daemon
+
+# Give the daemon time to fully start
+sleep 1
+
+# Open your desired widgets
+eww --config "$CFG" open-many  left_window
+
