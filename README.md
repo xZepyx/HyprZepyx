@@ -29,6 +29,15 @@ Designed and maintained by **Astryxz**.
 ### Waybar Layout
 ![Waybar](.previews/Waybar.png)
 
+#### Notification Center
+![SwayNC](.previews/new/swaync.png)
+
+#### Eww Widgets
+![Eww](.previews/new/eww.png)
+
+#### Eww Minimal
+![EwwMinimal](.previews/new/eww-minimal.png)
+
 ---
 
 ## Features
