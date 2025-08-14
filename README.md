@@ -57,10 +57,7 @@ Designed and maintained by **xZepyx**.
 ![Terminal](.previews/Lumen/Terminal.png)
 
 ### Waybar Layout
-![Waybar](.previews/Waybar.png)
-
-#### Notification Center
-![SwayNC](.previews/Abyss/swaync.png)
+![Waybar](.previews/Lumen/Waybar.png)
 
 
 
