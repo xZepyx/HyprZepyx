@@ -1,0 +1,26 @@
+{
+	"layer": "top",
+	"position": "top",
+	"margin": "5 10 0",
+    "fixed center": true,
+    "reload_style_on_change": true,
+	"height": 34,
+	"width": 1700,
+    "include": [
+        "~/.config/waybar/modules.jsonc"
+    ],
+
+	"modules-left": [
+        "clock",
+        "custom/recording",
+    ],
+
+	"modules-center": [
+        "hyprland/workspaces"
+    ],
+
+	"modules-right": [
+	"pulseaudio",
+        "group/custom-group"
+    ]
+}

@@ -1,0 +1,55 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "Papirus";
+    drun-display-format: "{name}";
+    font: "JetBrainsMono Nerd Font 12";
+    display-drun: "Search...";
+    disable-history: false;
+    sorting-method: "fzf";
+}
+
+* {
+    background: transparent;
+    text-color: #000000;
+    font: "JetBrainsMono Nerd Font 12";
+    border: 0px;
+    padding: 6px;
+}
+
+window {
+    transparency: "real";
+    background-color: transparent;
+    blur: true;
+    border: 0px;
+}
+
+mainbox {
+    padding: 20px;
+}
+
+listview {
+    lines: 8;
+    fixed-height: 0;
+    border: 0px;
+    padding: 10px;
+    spacing: 5px;
+}
+
+element normal, element alternate {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-color: #000000;
+}
+
+element selected {
+    background-color: rgba(255, 255, 255, 0.4);
+    text-color: #000000;
+}
+
+inputbar {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+}

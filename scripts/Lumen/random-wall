@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# This script selects a random wallpaper from the specified directory
+# and sets it using swww.
+
+# Define the wallpaper directory
+WALL_DIR="$HOME/Wallpapers/Lucent"
+
+# Check if the directory exists
+if [ ! -d "$WALL_DIR" ]; then
+    echo "Error: Wallpaper directory not found at $WALL_DIR" >&2
+    exit 1
+fi
+
+# Find all image files in the directory, shuffle them, and pick one.
+# We use 'shuf -n 1' for a fast, random selection.
+random_wallpaper=$(find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | shuf -n 1)
+
+# Check if a wallpaper was found
+if [ -n "$random_wallpaper" ]; then
+    # Check if swww is running, and if not, start the daemon
+    swww query || swww-daemon
+    
+    # Set the wallpaper with swww using a random transition
+    # A random transition adds a nice visual effect to the random wallpaper change.
+    swww img "$random_wallpaper" --transition-type random --transition-duration 1
+    
+    echo "Wallpaper set to: $random_wallpaper"
+else
+    echo "No image files found in the directory." >&2
+    exit 1
+fi
+
+
+# Update hyprlock.conf
+wallpath=$(swww query | grep -oP 'image: \K.*')
+sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf

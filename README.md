@@ -1,42 +1,68 @@
 # Minimal Hyprland Configuration
 
 A minimal yet functional Hyprland setup focused on speed, clarity, and aesthetics. 
-Designed and maintained by **Astryxz**.
+Designed and maintained by **xZepyx**.
 
 > This setup is tailored for personal use. Some paths or scripts may require adjustment based on your system.
 
+> Update : New Theme Added. Soon Auto-Theme Switcher Coming!!
+
 ---
 
-## Screenshots
+# Screenshots
 
 > All images are located in the repository and referenced below.
 
+## Abyss
+
 ### Code
-![Code](.previews/Code.png)
+![Code](.previews/Abyss/Code.png)
 
 ### Hyprlock (Lockscreen)
-![Hyprlock](.previews/new/hyprlock-new.png)
+![Hyprlock](.previews/Abyss/hyprlock-new.png)
 
 ### App Launcher (Rofi)
-![Rofi Apps](.previews/new/rofi-op.png)
+![Rofi Apps](.previews/Abyss/rofi-op.png)
 
 ### Terminal Layout
-![Terminal](.previews/Terminal.png)
+![Terminal](.previews/Abyss/Terminal.png)
 
 ### Wallpaper Switcher
-![Wallpaper Switcher](.previews/new/NewWall.png)
+![Wallpaper Switcher](.previews/Abyss/wall.png)
 
 ### Waybar Layout
 ![Waybar](.previews/Waybar.png)
 
 #### Notification Center
-![SwayNC](.previews/new/swaync.png)
+![SwayNC](.previews/Abyss/swaync.png)
 
 #### Eww Widgets
-![Eww](.previews/new/eww.png)
+![Eww](.previews/Abyss/eww.png)
 
 #### Eww Minimal
-![EwwMinimal](.previews/new/eww-minimal.png)
+![EwwMinimal](.previews/Abyss/eww-minimal.png)
+
+## Lumen
+
+### Desktop (Idle)
+![Desktop](.previews/Lumen/desktop.png)
+
+### Hyprlock (Lockscreen)
+![Hyprlock](.previews/Lumen/hyprlock.png)
+
+### App Launcher (Rofi)
+![Rofi Apps](.previews/Lumen/rofi-op.png)
+
+### Terminal Layout
+![Terminal](.previews/Lumen/Terminal.png)
+
+### Waybar Layout
+![Waybar](.previews/Waybar.png)
+
+#### Notification Center
+![SwayNC](.previews/Abyss/swaync.png)
+
+
 
 ---
 
@@ -111,7 +137,7 @@ Designed and maintained by **Astryxz**.
 - `kitty` (terminal)
 - `waybar` (status bar)
 - `swww-daemon` (wallpaper)
-- `mako` (notifications)
+- `swaync` (notifications)
 
 ---
 
