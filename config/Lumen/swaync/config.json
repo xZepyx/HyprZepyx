@@ -72,12 +72,12 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "⏺",
-          "command": "bash $HOME/.config/hypr/scripts/recorder.sh"
+          "label": "⏻",
+          "command": "wlogout"
         },
         {
-          "label": "■",
-          "command": "bash $HOME/.config/hypr/scripts/recorder.sh"
+          "label": "🔒︎",
+          "command": "hyprlock"
         },
         {
           "label": " ",
