@@ -13,6 +13,24 @@ Designed and maintained by **xZepyx**.
 
 > All images are located in the repository and referenced below.
 
+## Lumen
+
+### Desktop (Idle)
+![Desktop](.previews/Lumen/desktop.png)
+
+### Hyprlock (Lockscreen)
+![Hyprlock](.previews/Lumen/hyprlock.png)
+
+### App Launcher (Rofi)
+![Rofi Apps](.previews/Lumen/rofi-op.png)
+
+### Terminal Layout
+![Terminal](.previews/Lumen/Terminal.png)
+
+### Waybar Layout
+![Waybar](.previews/Lumen/Waybar.png)
+
+
 ## Abyss
 
 ### Code
@@ -41,23 +59,6 @@ Designed and maintained by **xZepyx**.
 
 #### Eww Minimal
 ![EwwMinimal](.previews/Abyss/eww-minimal.png)
-
-## Lumen
-
-### Desktop (Idle)
-![Desktop](.previews/Lumen/desktop.png)
-
-### Hyprlock (Lockscreen)
-![Hyprlock](.previews/Lumen/hyprlock.png)
-
-### App Launcher (Rofi)
-![Rofi Apps](.previews/Lumen/rofi-op.png)
-
-### Terminal Layout
-![Terminal](.previews/Lumen/Terminal.png)
-
-### Waybar Layout
-![Waybar](.previews/Lumen/Waybar.png)
 
 
 
