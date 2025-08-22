@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALL_DIR="$HOME/Wallpapers/Abyss"
+WALL_DIR="$HOME/Wallpapers"
 THUMB_DIR="$HOME/.cache/wallthumbs"
 mkdir -p "$THUMB_DIR"
 
@@ -51,3 +51,8 @@ fi
 wallpath=$(swww query | grep -oP 'image: \K.*')
 sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
 
+wal -i $full
+
+killall waybar; waybar &
+
+hyprctl reload

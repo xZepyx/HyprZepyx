@@ -1,93 +1,107 @@
 {
-  "$schema": "$XDG_CONFIG_HOME/swaync/configSchema.json",
-  "control-center-height": 2,
-  "control-center-layer": "overlay",
-  "control-center-margin-bottom": 20,
-  "control-center-margin-left": 0,
-  "control-center-margin-right": 10,
-  "control-center-margin-top": 20,
-  "control-center-width": 500,
-  "cssPriority": "application",
-  "control-center-positionX":"right",
-  "control-center-positionY":"center",
-  "fit-to-screen": true,
-  "hide-on-action": false,
-  "hide-on-clear": true,
-  "image-visibility": "when-available",
-  "keyboard-shortcuts": true,
-  "layer": "layer",
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-  "notification-icon-size": 40,
-  "notification-inline-replies": true,
-  "notification-visibility": {},
-  "notification-window-width": 400,
+  "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
-  "script-fail-notify": true,
-  "scripts": {},
-  "timeout": 10,
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "application",
+  "control-center-width": 520,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-window-width": 380,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 240,
+  "notification-body-image-width": 240,
+  "timeout": 8,
+  "timeout-low": 4,
   "timeout-critical": 0,
-  "timeout-low": 5,
-  "transition-time": 100,
+  "fit-to-screen": true,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 150,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+  "script-fail-notify": true,
+  "widgets": [
+    "mpris",
+    "title",
+    "volume",
+    "notifications",
+    "backlight",
+    "buttons-grid"
+  ],
   "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear"
+    },
+    "mpris": {
+      "image-size": 80,
+      "image-radius": 10
+    },
+    "volume": {
+      "label": "",
+      "step": 5
+    },
+    "backlight": {
+      "label": "󰃞",
+      "step": 5
+    },
     "buttons-grid": {
       "actions": [
         {
-          "active": false,
-          "command": "notify-send 'hey'",
-          "label": "󰤄",
-          "type": "toggle",
-          "update_command": "notify-send 'Hi'"
+          "label": "",
+          "command": "kitty nmtui",
+          "tooltip": "Network"
         },
         {
-          "active": false,
+          "label": "",
+          "command": "blueman-manager",
+          "tooltip": "Bluetooth"
+        },
+        {
+          "label": "󰂛",
           "command": "swaync-client -d",
-          "label": "",
-          "type": "toggle"
+          "type": "toggle",
+          "tooltip": "DND"
         },
         {
-          "active":false,
-          "command":"obs",
-          "label":"󰄀",
-          "type": "button"
+          "label": "󰍜",
+          "command": "gnome-network-displays",
+          "tooltip": "Screens"
         },
         {
-          "active":false,
-          "command":"obs",
-          "label":"󰕧",
-          "type": "button"
+          "label": "󰈙",
+          "command": "kitty bash -i -c 'Docs'",
+          "tooltip": "Files"
         },
         {
-          "active": false,
-          "command": "swaync-client -t",
-          "label": "",
-          "type": "toggle"
+          "label": "",
+          "command": "kitty bash -i -c 'Settings'",
+          "tooltip": "Settings"
+        },
+        {
+          "label": "",
+          "command": "hyprlock",
+          "tooltip": "Lock"
+        },
+        {
+          "label": "󰜉",
+          "command": "reboot",
+          "tooltip": "Reboot"
+        },
+        {
+          "label": "⏻",
+          "command": "shutdown now",
+          "tooltip": "Power Off"
         }
       ]
-    },
-    "mpris": {
-      "image-radius": 12,
-      "image-size": 96
-    },
-    "title": {
-      "text": "Notifications",
-      "button-text": "󰎟 Clear",
-      "clear-all-button": true      
-    },
-    "volume": {
-      "label": "",
-        "show-per-app": true,
-        "show-per-app-icon": true,
-        "show-per-app-label":true
     }
-},
-
-  "widgets": [
-    "title",
-    "notifications",
-    "buttons-grid",
-    "mpris",
-    "volume"
-  ]
+  }
 }

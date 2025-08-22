@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALL_DIR="$HOME/Wallpapers/Abyss"
+WALL_DIR="$HOME/Wallpapers"
 THUMB_DIR="$HOME/.cache/wallthumbs"
 mkdir -p "$THUMB_DIR"
 

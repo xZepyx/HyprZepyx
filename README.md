@@ -1,135 +1,107 @@
-# Minimal Hyprland Configuration
+# HyprZepyx — Minimal, Fast, Aesthetic Hyprland Dotfiles
 
-A minimal yet functional Hyprland setup focused on speed, clarity, and aesthetics. 
+A **minimal yet functional** Hyprland configuration focused on speed, clarity, and aesthetics.  
 Designed and maintained by **xZepyx**.
 
-> This setup is tailored for personal use. Some paths or scripts may require adjustment based on your system.
-
-> Update : New Theme Added. Soon Auto-Theme Switcher Coming!!
+> **Note:** This setup is tailored for personal use. You may need to adjust some paths or scripts for your system.
 
 ---
 
-# Screenshots
-
-> All images are located in the repository and referenced below.
-
-## Lumen
-
-### Desktop (Idle)
-![Desktop](.previews/Lumen/desktop.png)
-
-### Hyprlock (Lockscreen)
-![Hyprlock](.previews/Lumen/hyprlock.png)
-
-### App Launcher (Rofi)
-![Rofi Apps](.previews/Lumen/rofi-op.png)
-
-### Terminal Layout
-![Terminal](.previews/Lumen/Terminal.png)
-
-### Waybar Layout
-![Waybar](.previews/Lumen/Waybar.png)
-
-
-## Abyss
-
-### Code
-![Code](.previews/Abyss/Code.png)
-
-### Hyprlock (Lockscreen)
-![Hyprlock](.previews/Abyss/hyprlock-new.png)
-
-### App Launcher (Rofi)
-![Rofi Apps](.previews/Abyss/rofi-op.png)
-
-### Terminal Layout
-![Terminal](.previews/Abyss/Terminal.png)
-
-### Wallpaper Switcher
-![Wallpaper Switcher](.previews/Abyss/wall.png)
-
-### Waybar Layout
-![Waybar](.previews/Waybar.png)
-
-#### Notification Center
-![SwayNC](.previews/Abyss/swaync.png)
-
-#### Eww Widgets
-![Eww](.previews/Abyss/eww.png)
-
-#### Eww Minimal
-![EwwMinimal](.previews/Abyss/eww-minimal.png)
-
-
+> 🆕 **Latest:** New theme added!  
+> Auto Color Themes Added !
 
 ---
 
-## Features
+## 🖼️ Screenshots
 
-- **Minimal dwindle layout**
-- **Kitty terminal**
-- **Rofi launcher and powermenu**
-- **Waybar for system info**
-- **Wallpaper and lock screen integration**
-- **Blur, shadows, and rounded corners**
-- **Workspaces and multi-window support**
-- **Media, volume, and brightness keybindings**
+_Lumen Theme:_
+- **Desktop (Idle):**  
+  ![Desktop](.previews/Lumen/desktop.png)
+- **Hyprlock (Lockscreen):**  
+  ![Hyprlock](.previews/Lumen/hyprlock.png)
+- **App Launcher (Rofi):**  
+  ![Rofi Apps](.previews/Lumen/rofi-op.png)
+- **Terminal Layout:**  
+  ![Terminal](.previews/Lumen/Terminal.png)
+- **Waybar Layout:**  
+  ![Waybar](.previews/Lumen/Waybar.png)
 
----
-
-## Keybindings Overview
-
-| Key Combo | Action |
-|----------|--------|
-| `Super + Enter` | Launch Kitty terminal |
-| `Super + C` | Kill focused window |
-| `Super + M` | Exit Hyprland session |
-| `Super + E` | Open file manager (Nautilus) |
-| `Super + V` | Toggle floating for current window |
-| `Super + D` | Open app launcher (Rofi) |
-| `Super + Q` | Open power menu |
-| `Super + P` | Toggle pseudotiling |
-| `Super + J` | Toggle split mode |
-| `Super + Space` | Toggle fullscreen |
-| `Super + B` | Open wallpaper switcher |
-| `Super + W` | Launch web browser (Firefox) |
-| `Super + F` | Launch text editor |
-| `Alt + L` | Lock screen (Hyprlock) |
-| `Alt + D` | Select region and screenshot with `grim` + `slurp` |
-
-### Workspace Control
-
-| Key Combo | Action |
-|----------|--------|
-| `Super + [1-0]` | Switch to workspace 1–10 |
-| `Super + Shift + [1-0]` | Move active window to workspace 1–10 |
-| `Super + Arrow Keys` | Move focus to other windows |
-| `Super + Mouse Wheel` | Cycle through workspaces |
-
-### Mouse Binds
-
-| Mouse Combo | Action |
-|-------------|--------|
-| `Super + Left Click` | Move window |
-| `Super + Right Click` | Resize window |
-
-### Media / Volume / Brightness
-
-| Key | Action |
-|-----|--------|
-| `XF86AudioRaiseVolume` | Volume +5% |
-| `XF86AudioLowerVolume` | Volume -5% |
-| `XF86AudioMute` | Toggle mute |
-| `XF86AudioMicMute` | Toggle mic mute |
-| `XF86MonBrightnessUp` | Brightness +5% |
-| `XF86MonBrightnessDown` | Brightness -5% |
-| `XF86AudioNext` | Next track (playerctl) |
-| `XF86AudioPlay/Pause` | Toggle play/pause |
-| `XF86AudioPrev` | Previous track |
+_Abyss Theme:_
+- **Code:**  
+  ![Code](.previews/Abyss/Code.png)
+- **Hyprlock (Lockscreen):**  
+  ![Hyprlock](.previews/Abyss/hyprlock-new.png)
+- **App Launcher (Rofi):**  
+  ![Rofi Apps](.previews/Abyss/rofi-op.png)
+- **Terminal Layout:**  
+  ![Terminal](.previews/Abyss/Terminal.png)
+- **Wallpaper Switcher:**  
+  ![Wallpaper Switcher](.previews/Abyss/wall.png)
+- **Waybar Layout:**  
+  ![Waybar](.previews/Waybar.png)
+- **Notification Center:**  
+  ![SwayNC](.previews/Abyss/swayclient.png)
+- **Eww Widgets:**  
+  ![Eww](.previews/Abyss/eww.png)
+- **Eww Minimal:**  
+  ![EwwMinimal](.previews/Abyss/eww-minimal.png)
 
 ---
 
-## Autostart Applications
+## ✨ Features
+
+- **Minimal dwindle layout (Hyprland)**
+- **Kitty** terminal
+- **Rofi** launcher & powermenu
+- **Waybar** for system info
+- **Integrated wallpaper/lock screen**
+- **Blur, shadows & rounded corners**
+- **Workspaces & multi-window support**
+- **Media, volume & brightness keybinds**
+
+---
+
+## ⌨️ Keybindings
+
+| Combo                | Action                                     |
+|----------------------|--------------------------------------------|
+| `Super + Enter`      | Launch Kitty Terminal                      |
+| `Super + C`          | Kill focused window                        |
+| `Super + M`          | Exit Hyprland session                      |
+| `Super + E`          | Open file manager (Nautilus)               |
+| `Super + V`          | Toggle floating window                     |
+| `Super + D`          | Open Rofi app launcher                     |
+| `Super + Q`          | Open power menu                            |
+| `Super + P`          | Toggle pseudotiling                        |
+| `Super + J`          | Toggle split mode                          |
+| `Super + Space`      | Toggle fullscreen                          |
+| `Super + B`          | Open wallpaper switcher                    |
+| `Super + W`          | Launch Firefox                             |
+| `Super + F`          | Launch text editor                         |
+| `Alt + L`            | Lock screen (Hyprlock)                     |
+| `Alt + D`            | Region screenshot with grim+slurp          |
+
+**Workspace controls:**  
+- `Super + [1-0]`: Switch workspaces 1–10  
+- `Super + Shift + [1-0]`: Move window to workspace  
+- `Super + Arrow Keys`: Move focus  
+- `Super + Mouse Wheel`: Cycle workspaces  
+
+**Mouse binds:**  
+- `Super + Left Click`: Move window  
+- `Super + Right Click`: Resize window  
+
+**Media/volume/brightness:**  
+- `XF86AudioRaiseVolume`: Volume +5%  
+- `XF86AudioLowerVolume`: Volume -5%  
+- `XF86AudioMute`: Toggle mute  
+- `XF86AudioMicMute`: Toggle mic mute  
+- `XF86MonBrightnessUp/Down`: Brightness +/-5%  
+- `XF86AudioNext/Prev/Play/Pause`: Media control
+
+---
+
+## 🚀 Autostarted Apps
 
 - `nm-applet` (network)
 - `kitty` (terminal)
@@ -139,21 +111,16 @@ Designed and maintained by **xZepyx**.
 
 ---
 
-## License
+## 📜 License
 
-
-
-© 2025–2040 Aditya Yadav zepyxunderscore@gmail.com
-Licensed under GNU-GPLv3.
-You are free to copy, modify, and redistribute under the same license.
-
+© 2025–2040 Aditya Yadav <zepyxunderscore@gmail.com>  
+Licensed under **GNU GPLv3** — you are free to copy, modify, and redistribute under the same license.
 
 ---
 
-## Final Note
+## 💬 Final Note
 
-This configuration is designed for clean visuals and fast workflows
-
----
-
+This configuration is all about clean visuals and fast workflows.  
+Tweak it, remix it, or use it as a base for your own setup.  
+Happy customizing!
 
