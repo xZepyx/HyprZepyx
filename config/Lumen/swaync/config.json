@@ -76,7 +76,7 @@
           "command": "wlogout"
         },
         {
-          "label": "🔒︎",
+          "label": "",
           "command": "hyprlock"
         },
         {

@@ -73,17 +73,17 @@
         },
         {
           "label": "󰍜",
-          "command": "gnome-network-displays",
+          "command": "nwg-displays",
           "tooltip": "Screens"
         },
         {
           "label": "󰈙",
-          "command": "kitty bash -i -c 'Docs'",
+          "command": "nautilus ~/Documents",
           "tooltip": "Files"
         },
         {
           "label": "",
-          "command": "kitty bash -i -c 'Settings'",
+          "command": "lxappearnce",
           "tooltip": "Settings"
         },
         {

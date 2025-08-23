@@ -4,7 +4,7 @@
 # and sets it using swww.
 
 # Define the wallpaper directory
-WALL_DIR="$HOME/Wallpapers/Lumen"
+WALL_DIR="$HOME/Wallpapers/"
 
 # Check if the directory exists
 if [ ! -d "$WALL_DIR" ]; then
@@ -23,7 +23,7 @@ if [ -n "$random_wallpaper" ]; then
     
     # Set the wallpaper with swww using a random transition
     # A random transition adds a nice visual effect to the random wallpaper change.
-    swww img "$random_wallpaper" --transition-type random --transition-duration 1
+    swww img $random_wallpaper
     
     echo "Wallpaper set to: $random_wallpaper"
 else
@@ -35,3 +35,7 @@ fi
 # Update hyprlock.conf
 wallpath=$(swww query | grep -oP 'image: \K.*')
 sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
+
+wal -i $random_wallpaper
+
+swaync-client -rs

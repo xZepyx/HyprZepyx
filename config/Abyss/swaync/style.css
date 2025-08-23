@@ -46,7 +46,7 @@
   border: 1px solid @border_medium;
   border-top-color: @border_light;
   border-bottom-color: @border_dark;
-  border-radius: 0px;
+  border-radius: 12px;
   padding: 28px;
   min-width: 380px;
 }
