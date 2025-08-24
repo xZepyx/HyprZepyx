@@ -4,6 +4,7 @@
 
 /* ── 1. Palette & Globals (Using @define-color) ──────────────────── */
 
+@import '../../.cache/wal/colors-waybar.css';
 @define-color theme_fg rgba(248, 248, 252, 0.98); /* Primary Text */
 @define-color theme_fg_secondary rgba(215, 220, 225, 0.78); /* Secondary Text */
 @define-color theme_bg rgba(22, 22, 28, 0.22); /* Panel/Background */
