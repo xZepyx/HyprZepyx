@@ -39,3 +39,4 @@ sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
 wal -i $random_wallpaper
 
 swaync-client -rs
+hyprctl reload
