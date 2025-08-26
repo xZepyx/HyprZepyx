@@ -6,7 +6,7 @@
   "control-center-layer": "top",
   "layer-shell": true,
   "cssPriority": "application",
-  "control-center-width": 480,
+  "control-center-width": 420,
   "control-center-margin-top": 10,
   "control-center-margin-bottom": 40,
   "control-center-margin-right": 10,
@@ -83,7 +83,7 @@
         },
         {
           "label": "",
-          "command": "lxappearnce",
+          "command": "nwg-look",
           "tooltip": "Settings"
         },
         {

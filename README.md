@@ -7,8 +7,11 @@ Designed and maintained by **xZepyx**.
 
 ---
 
-> 🆕 **Latest:** New theme added!  
-> Auto Color Themes Added !
+> **Also**  You may need to get the right gtk and fonts to make this rice look way better, I'm currently working on adding some presets with automatic gtk configuring.
+
+---
+
+> 🆕 **Latest:** install.sh script added. (Not tested yet, use at your own risk)
 
 ---
 
@@ -123,4 +126,5 @@ Licensed under **GNU GPLv3** — you are free to copy, modify, and redistribute 
 This configuration is all about clean visuals and fast workflows.  
 Tweak it, remix it, or use it as a base for your own setup.  
 Happy customizing!
+
 

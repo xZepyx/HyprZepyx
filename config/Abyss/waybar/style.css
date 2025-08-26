@@ -1,4 +1,5 @@
-@import url("file:///home/aditya/.cache/wal/colors-waybar.css");
+@import url("colors.css");  
+
 
 * {
     border: none;
@@ -13,6 +14,7 @@ window#waybar {
     background: rgba(16, 18, 19, 0.8);
     color: @foreground;
 }
+
 
 #workspaces {
     background: @background;
@@ -137,26 +139,32 @@ window#waybar {
 }
 
 #custom-playerctl {
-    background: @background;
-    padding: 0px 5px 0px 10px;
-    border-radius: 16px;
-    margin: 5px 7px;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 16px;
+	background: @background;
+	padding-left: 15px;
+  padding-right: 14px;
+	border-radius: 16px;
+  /*border-left: solid 1px #282738;*/
+  /*border-right: solid 1px #282738;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
 }
 
 #custom-playerlabel {
     background: transparent;
     padding-left: 10px;
-    padding-right: 5px;
+    padding-right: 15px;
     border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: normal;
     font-style: normal;
 }
-
 #window {
     background: @background;
     padding-left: 15px;
@@ -198,3 +206,6 @@ window#waybar {
     font-weight: bold;
 }
 
+#hyprland-window {
+  background-color: transparent;
+}
