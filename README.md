@@ -29,9 +29,9 @@ _Abyss Theme:_
 - **Wallpaper Switcher:**  
   ![Wallpaper Switcher](.previews/Abyss/rofi-wayland-wall.png)
 - **Waybar Layout:**  
-  ![Waybar](.previews/waybar-abyss.png)
+  ![Waybar](.previews/Abyss/waybar-abyss.png)
 - **Notification Center:**  
-  ![SwayNC](.previews/Abyss/swayncclient.png)
+  ![SwayNC](.previews/Abyss/swaync-client.png)
 - **Eww Minimal:**  
   ![EwwMinimal](.previews/Abyss/eww-minimal.png)
 
@@ -127,5 +127,6 @@ Licensed under **GNU GPLv3** — you are free to copy, modify, and redistribute 
 This configuration is all about clean visuals and fast workflows.  
 Tweak it, remix it, or use it as a base for your own setup.  
 Happy customizing!
+
 
 

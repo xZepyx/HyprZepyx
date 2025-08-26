@@ -2,7 +2,7 @@
 # HyprZepyx Dotfiles Installer
 # Fancy, safe, interactive installer
 
-set -e
+set -euo pipefail
 
 # ───────────────────────────────
 # Colors
@@ -20,9 +20,9 @@ RESET="\e[0m"
 clear
 if command -v toilet >/dev/null 2>&1; then
   if command -v lolcat >/dev/null 2>&1; then
-    toilet -f mono9 "HyprZepyx Installer" | lolcat
+    toilet -f mono9 "HyprZepyx" | lolcat
   else
-    toilet -f mono9 "HyprZepyx Installer"
+    toilet -f mono9 "HyprZepyx"
   fi
 else
   echo -e "${YELLOW}[!] 'toilet' is not installed.${RESET}"
@@ -40,12 +40,12 @@ echo
 # Confirm
 # ───────────────────────────────
 read -rp "$(echo -e ${YELLOW}"Proceed with installing HyprZepyx dotfiles? (y/N): "${RESET})" ans
-[[ ! "$ans" =~ ^[Yy]$ ]] && echo -e "${RED}[-] Cancelled.${RESET}" && exit 1
+[[ ! "${ans:-}" =~ ^[Yy]$ ]] && echo -e "${RED}[-] Cancelled.${RESET}" && exit 1
 
 # ───────────────────────────────
 # Detect package manager
 # ───────────────────────────────
-detect_pkg_mgr(){
+detect_pkg_mgr() {
   command -v pacman >/dev/null && echo "pacman" && return
   command -v apt >/dev/null && echo "apt" && return
   command -v dnf >/dev/null && echo "dnf" && return
@@ -55,21 +55,20 @@ PKG=$(detect_pkg_mgr || true)
 # ───────────────────────────────
 # Dependencies
 # ───────────────────────────────
-# Normalize package names for each distro
-ARCH_PKGS=(hyprland waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit-kde-agent pipewire wireplumber xdg-desktop-portal-hyprland swww jq ttf-hurmit nerd-fonts kitty mpv firefox)
-APT_PKGS=(hyprland waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit-kde-agent-1 pipewire wireplumber xdg-desktop-portal-hyprland swww jq fonts-hack-ttf kitty mpv firefox-esr)
-DNF_PKGS=(hyprland waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit-gnome pipewire wireplumber xdg-desktop-portal-hyprland swww jq hack-fonts kitty mpv firefox)
+ARCH_PKGS=(hyprland waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit-kde-agent xdg-desktop-portal-hyprland swww jq kitty mpv firefox)
+APT_PKGS=(waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit-kde-agent-1 pipewire wireplumber xdg-desktop-portal-hyprland swww jq fonts-hack-ttf kitty mpv firefox-esr)
+DNF_PKGS=(waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit-gnome pipewire wireplumber xdg-desktop-portal-hyprland swww jq hack-fonts kitty mpv firefox)
 
 if [ -n "$PKG" ]; then
   echo -e "${CYAN}[+] Installing dependencies with $PKG...${RESET}"
   case $PKG in
-    pacman) sudo pacman -Syu --needed "${ARCH_PKGS[@]}" ;;
-    apt) sudo apt update && sudo apt install -y "${APT_PKGS[@]}" ;;
+    pacman) sudo pacman -S --needed "${ARCH_PKGS[@]}" ;;
+    apt) sudo apt update && sudo apt install -y "${APT_PKGS[@]}" || echo -e "${YELLOW}[!] Hyprland may need manual install on Debian/Ubuntu${RESET}" ;;
     dnf) sudo dnf install -y "${DNF_PKGS[@]}" ;;
   esac
 else
   echo -e "${RED}[!] Could not detect package manager. Install these manually:${RESET}"
-  echo "    hyprland waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit pipewire wireplumber xdg-desktop-portal-hyprland swww jq hurmit-fonts kitty mpv firefox"
+  echo "    hyprland waybar rofi dunst foot grim slurp wl-clipboard brightnessctl polkit pipewire wireplumber xdg-desktop-portal-hyprland swww jq hack-fonts kitty mpv firefox"
 fi
 
 # ───────────────────────────────
@@ -79,7 +78,8 @@ REPO="https://github.com/xZepyx/HyprZepyx.git"
 DIR="$HOME/.hyprzepyx-dotfiles"
 if [ -d "$DIR/.git" ]; then
   echo -e "${YELLOW}[!] Dotfiles already exist. Updating...${RESET}"
-  git -C "$DIR" pull
+  git -C "$DIR" fetch --all
+  git -C "$DIR" reset --hard origin/main
 else
   echo -e "${CYAN}[+] Cloning HyprZepyx dotfiles...${RESET}"
   git clone "$REPO" "$DIR"
@@ -89,17 +89,26 @@ fi
 # Backup & Theme selector
 # ───────────────────────────────
 echo
-echo -e "${YELLOW}[?] Pick a default theme to install:${RESET}"
+PS3="Select theme [default: Lumen]: "
 select theme in "Lumen" "Abyss"; do
+  theme=${theme:-Lumen}
   case $theme in
     "Lumen"|"Abyss")
       BACKUP_DIR="$HOME/.config-backup-$(date +%s)"
       echo -e "${CYAN}[+] Backing up ~/.config → $BACKUP_DIR ${RESET}"
       mkdir -p "$BACKUP_DIR"
-      cp -r ~/.config/* "$BACKUP_DIR/" 2>/dev/null || true
+      cp -r "$HOME/.config/"* "$BACKUP_DIR/" 2>>"$HOME/hyprzepyx-install.log" || true
 
+      # Install configs (copy CONTENTS, not the folder itself)
       echo -e "${CYAN}[+] Installing $theme configs...${RESET}"
-      cp -r "$DIR/$theme/." "$HOME/.config/"
+      shopt -s dotglob nullglob
+      cp -r "$DIR/config/$theme/"* "$HOME/.config/"
+      shopt -u dotglob nullglob
+
+      # Install scripts (preserve Abyss & Lumen structure)
+      echo -e "${CYAN}[+] Installing scripts to ~/.scripts...${RESET}"
+      mkdir -p "$HOME/.scripts"
+      cp -r "$DIR/scripts/"* "$HOME/.scripts/"
 
       echo -e "${GREEN}[✔] $theme theme installed.${RESET}"
       break
@@ -114,4 +123,6 @@ done
 echo
 echo -e "${GREEN}[✔] HyprZepyx installation complete!${RESET}"
 echo -e "${CYAN}→ Restart Hyprland to apply changes.${RESET}"
+echo -e "${CYAN}→ Backup stored at: $BACKUP_DIR${RESET}"
+echo -e "${CYAN}→ Install log: $HOME/hyprzepyx-install.log${RESET}"
 
