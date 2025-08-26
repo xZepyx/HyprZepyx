@@ -15,7 +15,27 @@ Designed and maintained by **xZepyx**.
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
+
+_Abyss Theme:_
+- **Code:**  
+  ![Code](.previews/Abyss/Code.png)
+- **Hyprlock (Lockscreen):**  
+  ![Hyprlock](.previews/Abyss/hyprlock.png)
+- **App Launcher (Rofi):**  
+  ![Rofi Apps](.previews/Abyss/rofi-op.png)
+- **Desktop Layout:**  
+  ![Desktop](.previews/Abyss/desktop.png)
+- **Wallpaper Switcher:**  
+  ![Wallpaper Switcher](.previews/Abyss/rofi-wayland-wall.png)
+- **Waybar Layout:**  
+  ![Waybar](.previews/waybar-abyss.png)
+- **Notification Center:**  
+  ![SwayNC](.previews/Abyss/swayncclient.png)
+- **Eww Minimal:**  
+  ![EwwMinimal](.previews/Abyss/eww-minimal.png)
+
+---
 
 _Lumen Theme:_
 - **Desktop (Idle):**  
@@ -29,26 +49,6 @@ _Lumen Theme:_
 - **Waybar Layout:**  
   ![Waybar](.previews/Lumen/Waybar.png)
 
-_Abyss Theme:_
-- **Code:**  
-  ![Code](.previews/Abyss/Code.png)
-- **Hyprlock (Lockscreen):**  
-  ![Hyprlock](.previews/Abyss/hyprlock-new.png)
-- **App Launcher (Rofi):**  
-  ![Rofi Apps](.previews/Abyss/rofi-op.png)
-- **Terminal Layout:**  
-  ![Terminal](.previews/Abyss/Terminal.png)
-- **Wallpaper Switcher:**  
-  ![Wallpaper Switcher](.previews/Abyss/wall.png)
-- **Waybar Layout:**  
-  ![Waybar](.previews/Waybar.png)
-- **Notification Center:**  
-  ![SwayNC](.previews/Abyss/swayclient.png)
-- **Eww Widgets:**  
-  ![Eww](.previews/Abyss/eww.png)
-- **Eww Minimal:**  
-  ![EwwMinimal](.previews/Abyss/eww-minimal.png)
-
 ---
 
 ## ✨ Features
@@ -61,6 +61,7 @@ _Abyss Theme:_
 - **Blur, shadows & rounded corners**
 - **Workspaces & multi-window support**
 - **Media, volume & brightness keybinds**
+- **Minimal Lighweight but usable with looks**
 
 ---
 
@@ -106,11 +107,11 @@ _Abyss Theme:_
 
 ## 🚀 Autostarted Apps
 
-- `nm-applet` (network)
 - `kitty` (terminal)
 - `waybar` (status bar)
 - `swww-daemon` (wallpaper)
 - `swaync` (notifications)
+- `eww` (widgets)
 
 ---
 
