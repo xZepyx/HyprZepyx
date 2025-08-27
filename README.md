@@ -1,71 +1,33 @@
-# HyprZepyx — Minimal, Fast, Aesthetic Hyprland Dotfiles
+<div align="center">
+    <h1>【 HyprZepyx Project 】</h1>
+    <h3></h3>
+</div>
+
+<div align="center"> 
+    
+![](https://img.shields.io/github/last-commit/xZepyx/HyprZepyx?&style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/stars/xZepyx/HyprZepyx?style=for-the-badge&logo=andela&color=86dbd7&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/repo-size/xZepyx/HyprZepyx?color=86dbce&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
+
+</div>
+
+---
+
+<div align="center">
+    <h2>• overview •</h2>
+    <h3></h3>
+</div>
 
 A **minimal yet functional** Hyprland configuration focused on speed, clarity, and aesthetics.  
-Designed and maintained by **xZepyx**.
+Designed and maintained by **xZepyx**.  
 
-> **Note:** This setup is tailored for personal use. You may need to adjust some paths or scripts for your system.
-
----
-
-> **Also**  You may need to get the right gtk and fonts to make this rice look way better, I'm currently working on adding some presets with automatic gtk configuring.
+> **Note:** This setup is tailored for personal use. You may need to adjust some paths or scripts for your system.  
+> For better visuals, make sure you install proper GTK themes and fonts.  
 
 ---
 
-> 🆕 **Latest:** install.sh script added. (Not tested yet, use at your own risk)
-
----
-
-##  Screenshots
-
-_Abyss Theme:_
-- **Code:**  
-  ![Code](.previews/Abyss/Code.png)
-- **Hyprlock (Lockscreen):**  
-  ![Hyprlock](.previews/Abyss/hyprlock.png)
-- **App Launcher (Rofi):**  
-  ![Rofi Apps](.previews/Abyss/rofi-op.png)
-- **Desktop Layout:**  
-  ![Desktop](.previews/Abyss/desktop.png)
-- **Wallpaper Switcher:**  
-  ![Wallpaper Switcher](.previews/Abyss/rofi-wayland-wall.png)
-- **Waybar Layout:**  
-  ![Waybar](.previews/Abyss/waybar-abyss.png)
-- **Notification Center:**  
-  ![SwayNC](.previews/Abyss/swaync-client.png)
-- **Eww Minimal:**  
-  ![EwwMinimal](.previews/Abyss/eww-minimal.png)
-
----
-
-_Lumen Theme:_
-- **Desktop (Idle):**  
-  ![Desktop](.previews/Lumen/desktop.png)
-- **Hyprlock (Lockscreen):**  
-  ![Hyprlock](.previews/Lumen/hyprlock.png)
-- **App Launcher (Rofi):**  
-  ![Rofi Apps](.previews/Lumen/rofi-op.png)
-- **Terminal Layout:**  
-  ![Terminal](.previews/Lumen/Terminal.png)
-- **Waybar Layout:**  
-  ![Waybar](.previews/Lumen/Waybar.png)
-
----
-
-## ✨ Features
-
-- **Minimal dwindle layout (Hyprland)**
-- **Kitty** terminal
-- **Rofi** launcher & powermenu
-- **Waybar** for system info
-- **Integrated wallpaper/lock screen**
-- **Blur, shadows & rounded corners**
-- **Workspaces & multi-window support**
-- **Media, volume & brightness keybinds**
-- **Minimal Lighweight but usable with looks**
-
----
-
-## ⌨️ Keybindings
+<details>
+  <summary>Keybindings</summary>
 
 | Combo                | Action                                     |
 |----------------------|--------------------------------------------|
@@ -101,32 +63,88 @@ _Lumen Theme:_
 - `XF86AudioMute`: Toggle mute  
 - `XF86AudioMicMute`: Toggle mic mute  
 - `XF86MonBrightnessUp/Down`: Brightness +/-5%  
-- `XF86AudioNext/Prev/Play/Pause`: Media control
+- `XF86AudioNext/Prev/Play/Pause`: Media control  
+
+</details>
+
+<details>
+  <summary>Autostarted apps</summary>
+
+- `kitty` (terminal)  
+- `waybar` (status bar)  
+- `swww-daemon` (wallpaper)  
+- `swaync` (notifications)  
+- `eww` (widgets)  
+
+</details>
 
 ---
 
-## 🚀 Autostarted Apps
+<div align="center">
+    <h2>• screenshots •</h2>
+    <h3></h3>
+</div>
 
-- `kitty` (terminal)
-- `waybar` (status bar)
-- `swww-daemon` (wallpaper)
-- `swaync` (notifications)
-- `eww` (widgets)
+### Abyss<sup>eww</sup> — *“Stillness devours”* 
+
+Widget system: eww | Support: Yes  
+
+| Code | Lockscreen |
+|:----:|:----------:|
+| ![Code](.previews/Abyss/Code.png) | ![Hyprlock](.previews/Abyss/hyprlock.png) |
+| *Code* | *Hyprlock (Lockscreen)* |
+
+| Rofi (Wall) | Eww Minimal |
+|:-----------:|:-----------:|
+| ![Rofi Wall](.previews/Abyss/rofi-wayland-wall.png) | ![Eww Minimal](.previews/Abyss/eww-minimal.png) |
+| *Wallpaper Switcher* | *Eww Minimal* |
 
 ---
 
-## 📜 License
+### Lumen<sup>glossy</sup> — *“Shadows made visible.”*
+
+Widget system: none | Support: Yes  
+
+| Desktop (Idle) | Lockscreen |
+|:--------------:|:----------:|
+| ![Desktop](.previews/Lumen/desktop.png) | ![Hyprlock](.previews/Lumen/hyprlock.png) |
+| *Desktop (Idle)* | *Hyprlock (Lockscreen)* |
+
+| Rofi Apps | Terminal |
+|:---------:|:--------:|
+| ![Rofi Apps](.previews/Lumen/rofi-op.png) | ![Terminal](.previews/Lumen/Terminal.png) |
+| *App Launcher* | *Terminal Layout* |
+
+---
+
+<div align="center">
+    <h2>• thank you •</h2>
+    <h3></h3>
+</div>
+
+- [Hyprland](https://github.com/hyprwm/hyprland) devs  
+- [Eww](https://elkowar.github.io/eww/) for widget system  
+- [Waybar](https://github.com/Alexays/Waybar) project  
+- And everyone making Linux rice beautiful ✨  
+
+---
+
+<div align="center">
+    <h2>• license •</h2>
+    <h3></h3>
+</div>
 
 © 2025–2040 Aditya Yadav <zepyxunderscore@gmail.com>  
-Licensed under **GNU GPLv3** — you are free to copy, modify, and redistribute under the same license.
+Licensed under **GNU GPLv3** — free to use, modify, and redistribute under the same license.  
 
 ---
 
-## 💬 Final Note
+<div align="center">
+    <h2>• final note •</h2>
+    <h3></h3>
+</div>
 
 This configuration is all about clean visuals and fast workflows.  
 Tweak it, remix it, or use it as a base for your own setup.  
-Happy customizing!
-
-
+Happy customizing!  
 
