@@ -21,7 +21,7 @@
 A **minimal yet functional** Hyprland configuration focused on speed, clarity, and aesthetics.  
 Designed and maintained by **xZepyx**.  
 
-> **Note:** This setup is tailored for personal use. You may need to adjust some paths or scripts for your system.  
+> **Note:** This setup is tailored for personal use. You may need to adjust some paths or scripts for your system. Also to use kernel-fault, you need to setup the python-venv by yourself it's a one-time job I'll maybe add a script for that later.
 > For better visuals, make sure you install proper GTK themes and fonts.  
 
 ---
@@ -164,4 +164,5 @@ Licensed under **GNU GPLv3** — free to use, modify, and redistribute under the
 This configuration is all about clean visuals and fast workflows.  
 Tweak it, remix it, or use it as a base for your own setup.  
 Happy customizing!  
+
 
