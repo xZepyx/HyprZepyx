@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ignis toggle-window ignis_LAUNCHER

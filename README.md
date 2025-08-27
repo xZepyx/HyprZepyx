@@ -85,7 +85,24 @@ Designed and maintained by **xZepyx**.
     <h3></h3>
 </div>
 
-### Abyss<sup>eww</sup> — *“Stillness devours”* 
+
+### kernel-fault<sup>ignis</sup> — *“fatal exception: elegance”* 
+
+Widget system: Ignis | Support: Yes  
+
+| Widgets | Launcher |
+|:----:|:----------:|
+| ![image](.previews/kernel-fault/widgets.png) | ![image](.previews/kernel-fault/launcher.png) |
+| *Widgets* | *Launcher (Ignis)* |
+
+| Control Center | Eww Minimal |
+|:-----------:|:-----------:|
+| ![image](.previews/kernel-fault/control-center.png) | ![image](.previews/kernel-fault/kitty.png) |
+| *Control Center* | *Terminal* |
+
+---
+
+### abyss<sup>eww</sup> — *“stillness devours”* 
 
 Widget system: eww | Support: Yes  
 
@@ -101,9 +118,9 @@ Widget system: eww | Support: Yes
 
 ---
 
-### Lumen<sup>glossy</sup> — *“Shadows made visible.”*
+### lumen<sup>glossy</sup> — *“shadows made visible.”*
 
-Widget system: none | Support: Yes  
+Widget system: none | Support: No (Dead)
 
 | Desktop (Idle) | Lockscreen |
 |:--------------:|:----------:|

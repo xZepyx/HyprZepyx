@@ -1,0 +1,211 @@
+@import url("colors.css");  
+
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: SF Mono, Iosevka, Noto Sans CJK;
+    font-size: 13px;
+    font-style: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(16, 18, 19, 0.8);
+    color: @foreground;
+}
+
+
+#workspaces {
+    background: @background;
+    margin: 5px 5px;
+    padding: 8px 5px;
+    border-radius: 16px;
+    border: solid 0px @foreground;
+    font-weight: normal;
+    font-style: normal;
+}
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 16px;
+    color: @background;
+    background-color: @color2;
+    transition: all 0.3s ease-in-out;
+}
+#workspaces button.active {
+    color: @background;
+    background-color: @color4;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+#workspaces button:hover {
+    background-color: @color2;
+    color: @background;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+}
+
+#clock, #battery, #pulseaudio, #network, #custom-brightness, #custom-launcher, #custom-updates-pacman-aur {
+    background: transparent;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 8px;
+    border: solid 0px @color5;
+}
+
+#custom-brightness{
+    color: @foreground;
+    font-weight: bold;
+}
+
+#custom-updates-pacman-aur{
+    color: @foreground;
+    font-weight: bold;
+}
+
+#tray {
+    background: @background;
+    margin: 5px 5px 5px 5px;
+    border-radius: 16px;
+    padding: 0px 12px;
+}
+
+#clock {
+    color: @foreground;
+    background-color: @background;
+    border-radius: 0px 0px 0px 24px;
+    padding-left: 13px;
+    padding-right: 15px;
+    margin-right: 0px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+#battery {
+    color: @foreground;
+    font-weight: bold;
+}
+#battery.charging {
+    color: @color4;
+}
+#battery.warning:not(.charging) {
+    color: @color1;
+}
+
+#backlight {
+    color: @foreground;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
+    font-weight: bold;
+}
+
+#network {
+    color: @foreground;
+    border-radius: 8px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#pulseaudio {
+    color: @foreground;
+    border-radius: 8px;
+    margin-left: 0px;
+    font-weight: bold;
+}
+
+#custom-launcher {
+    color: @foreground;
+    background-color: @background;
+    border-radius: 0px 24px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0 20px 0 13px;
+    font-size: 20px;
+}
+#custom-launcher button:hover {
+    background-color: @color1;
+    color: transparent;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+}
+
+#custom-playerctl {
+	background: @background;
+	padding-left: 15px;
+  padding-right: 14px;
+	border-radius: 16px;
+  /*border-left: solid 1px #282738;*/
+  /*border-right: solid 1px #282738;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+}
+
+#custom-playerlabel {
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+#window {
+    background: @background;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#cpu {
+    background-color: @background;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#memory {
+    background-color: @background;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#disk {
+    background-color: @background;
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#hyprland-window {
+  background-color: transparent;
+}

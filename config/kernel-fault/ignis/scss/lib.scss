@@ -1,0 +1,65 @@
+.rec-unset {
+    * {
+        all: unset;
+    }
+}
+
+.unset {
+    all: unset;
+}
+
+tooltip {
+    all: unset;
+    background-color: $surface;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.toggle-box {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.35rem;
+    background-color: $primaryContainer;
+}
+
+.material-slider {
+    all: unset;
+
+    * {
+        all: unset;
+    }
+}
+
+.material-slider trough,
+.material-slider trough highlight {
+    background-color: $secondaryContainer;
+    border-radius: 1rem;
+    min-height: 1rem;
+}
+
+
+.material-slider trough highlight {
+    background-color: $primary;
+}
+
+.material-slider-icon {
+    padding: 0.25rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+
+.material-slider-arrow {
+    all: unset;
+    padding: 0.25rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    border-radius: 1rem;
+    margin-left: 0.5rem;
+}
+
+.hover-surface {
+    @include hover($surface);
+    transition: 0.3s;
+}

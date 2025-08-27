@@ -55,6 +55,6 @@ wal -i $full
 wal -e $full
 
 killall waybar && waybar &
-killall nwg-dock-hyprland; nwg-dock-hyprland -i 38 &
+killall nwg-dock-hyprland && nwg-dock-hyprland -i 38 -p bottom -c "$HOME/.scripts/kernel-fault/ignis-launcher" &
 
 hyprctl reload

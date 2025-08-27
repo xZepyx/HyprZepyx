@@ -1,0 +1,12 @@
+.notification-popup {
+    @include window;
+    min-width: 25rem;
+
+    & .notification-close {
+        @include hover($surface);
+    }
+
+    & .notification-action {
+        @include hover($surfaceContainer);
+    }
+}

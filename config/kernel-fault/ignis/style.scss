@@ -1,0 +1,20 @@
+* {
+    font-family: JetBrainsMono;
+    font-weight: bold;
+}
+
+@import "scss/mixins/window.scss";
+@import "scss/mixins/hover.scss";
+
+@import "scss/lib.scss";
+
+
+@import "./scss/bar.scss";
+@import "./scss/control_center.scss";
+@import "./scss/osd.scss";
+@import "./scss/notification_popup.scss";
+@import "./scss/launcher.scss";
+@import "./scss/settings.scss";
+@import "./scss/powermenu.scss";
+@import "./scss/notification_center.scss";
+
