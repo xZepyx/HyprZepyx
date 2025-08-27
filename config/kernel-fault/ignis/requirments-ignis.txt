@@ -1,0 +1,13 @@
+# This file contains all the deps to run the ignis shell
+# Run : python -m venv ignis-python-venv (inside ~/.config/ignis directory)
+# Then : source ignis-python-venv/bin/activate or source ignis-python-venv/bin/activate.fish (for fish shell)
+# And install the the deps listed below
+
+pip install :
+
+git+https://github.com/ignis-sh/ignis.git
+Pillow
+materialyoucolor
+jinja2
+
+
