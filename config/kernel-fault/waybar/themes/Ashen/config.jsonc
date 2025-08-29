@@ -1,0 +1,99 @@
+{
+  "position": "top",
+  "layer": "top",
+
+  // Bar
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window", "custom/playerctl", "custom/playerlabel"],
+  "modules-right": ["battery", "clock"],
+
+
+
+  // Modules configuration
+
+  "clock": {
+    "format": "<span size='12000'></span> {:%I:%M %p}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "swaync-client -t",
+  },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "",
+    },
+    "sort-by-number": true,
+  },
+    "custom/playerctl": {
+      "format": "{icon}",
+      "return-type": "json",
+      "max-length": 64,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#E5B9C6'>󰒮 󰏥  󰒭</span>",
+        "Paused": "<span foreground='#928374'>󰒮 󰐌  󰒭</span>"
+      },
+    },
+
+    "custom/playerlabel": {
+      "format": "<span>{}</span>",
+      "return-type": "json",
+      "max-length": 48,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+      },
+    },
+
+  "pulseaudio": {
+    "format": "<span size='12000'>{icon}</span> {volume}%",
+    "format-muted": "<span size='12000' foreground='#ff7eb6'></span> {volume}%",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""],
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+  },
+  "tray": {
+      "icon-size": 16,
+      "spacing": 8,
+  },
+
+
+  "battery": {
+    "states": {
+      "critical": 15,
+    },
+    "format": "<span size='13000'>{icon} </span>{capacity}%",
+      "format-warning": "<span size='13000'>{icon} </span>{capacity}%",
+      "format-critical": "<span size='13000'>{icon} </span>{capacity}%",
+      "format-charging": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+      "format-plugged": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+      "format-full": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+      "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰂂"],
+      "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
+  },
+
+}
+

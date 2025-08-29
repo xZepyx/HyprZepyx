@@ -3,18 +3,18 @@
   "layer": "top",
 
   // Bar
-  "modules-left": [ "hyprland/workspaces", "custom/playerctl", "custom/playerlabel"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["custom/playerctl", "custom/playerlabel"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": ["tray", "pulseaudio", "battery", "clock"],
 
 
   // Modules configuration
-  
+
   "clock": {
     "format": "<span size='12000'></span> {:%I:%M %p}",
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "ignis toggle-window ignis_CONTROL_CENTER",
+    "on-click": "swaync-client -t",
   },
   "hyprland/workspaces": {
     "active-only": false,
@@ -51,11 +51,11 @@
       "max-length": 48,
       "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
       "on-click-middle": "playerctl play-pause",
-      "on-click-left": "playerctl previous",
+      "on-click": "playerctl previous",
       "on-click-right": "playerctl next",
       "format-icons": {
-        "Playing": "<span foreground='#E5B9C6'>󰒮  󰐌  󰒭</span>",
-        "Paused": "<span foreground='#928374'>󰒮  󰏥  󰒭</span>"
+        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
       },
     },
 
