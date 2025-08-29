@@ -19,6 +19,8 @@
 A **minimal yet functional** Hyprland configuration focused on speed, clarity, and aesthetics.  
 Designed and maintained by **xZepyx**.  
 
+**Lastest** : Added waybar themes, command : Alt + A
+
 > ⚡ **Note:** This setup is tailored for personal use. Some paths or scripts may require adjustments.  
 > 📦 To use the **kernel-fault** theme, install the required packages listed in [`requirements-ignis.txt`](config/kernel-fault/ignis/requirments-ignis.txt).  
 > 🎨 For best visuals, ensure proper GTK themes and fonts are installed.  

@@ -1,24 +1,13 @@
 #!/bin/bash
 
 THEME_DIR="$HOME/.config/waybar/themes"
-ASSET_DIR="$HOME/.config/waybar/assets"
+WAYBAR_DIR="$HOME/.config/waybar"
 
-# List themes
+# List themes (folders inside $THEME_DIR)
 THEMES=$(ls -1 "$THEME_DIR")
 
-# Build menu input with icons (icon path + theme name)
-MENU=""
-for t in $THEMES; do
-    ICON="$ASSET_DIR/$t.png"
-    if [[ -f "$ICON" ]]; then
-        MENU+="$t\0icon\x1f$ICON\n"
-    else
-        MENU+="$t\n"
-    fi
-done
-
-# Show menu with icons
-THEME=$(echo -en "$MENU" | rofi -dmenu -markup-rows -p "Waybar Theme:")
+# Show menu (choose wofi or rofi)
+THEME=$(echo "$THEMES" | rofi -dmenu -p "Waybar Theme:")  # replace wofi with rofi -dmenu if you prefer
 
 # Exit if no choice
 [ -z "$THEME" ] && exit 0
@@ -29,9 +18,13 @@ if [[ ! -d "$THEME_DIR/$THEME" ]]; then
     exit 1
 fi
 
-# Kill and launch Waybar with selected theme
-pkill waybar
-waybar --config "$THEME_DIR/$THEME/config.jsonc" --style "$THEME_DIR/$THEME/style.css" &
+# Apply theme (symlink files)
+ln -sf "$THEME_DIR/$THEME/colors.css" "$WAYBAR_DIR/colors.css"
+ln -sf "$THEME_DIR/$THEME/style.css" "$WAYBAR_DIR/style.css"
+ln -sf "$THEME_DIR/$THEME/config.jsonc" "$WAYBAR_DIR/config.jsonc"
+
+# Restart waybar
+pkill waybar && waybar &
 
 notify-send "Waybar Theme" "Switched to $THEME"
 
