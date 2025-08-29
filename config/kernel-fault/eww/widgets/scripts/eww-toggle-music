@@ -1,0 +1,4 @@
+#!/bin/bash
+
+eww -c ~/.config/eww/widgets active-windows | awk '{print $2}' | grep -qx music && eww -c ~/.config/eww/widgets close music || eww -c ~/.config/eww/widgets open music
+

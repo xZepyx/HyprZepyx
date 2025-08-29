@@ -1,0 +1,4 @@
+#!/bin/bash
+
+eww -c ~/.config/eww/widgets active-windows | awk '{print $2}' | grep -qx clock && eww -c ~/.config/eww/widgets close clock || eww -c ~/.config/eww/widgets open clock
+

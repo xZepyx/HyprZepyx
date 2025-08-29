@@ -1,0 +1,84 @@
+#!/bin/bash
+
+COVER="/tmp/.music_cover.jpg"
+
+## Get status
+get_status() {
+    if playerctl status 2>/dev/null | grep -q "Playing"; then
+        echo ""
+    else
+        echo "喇"
+    fi
+}
+
+## Get song
+get_song() {
+    song=$(playerctl metadata xesam:title 2>/dev/null)
+    echo "${song:-Offline}"
+}
+
+## Get artist
+get_artist() {
+    artist=$(playerctl metadata xesam:artist 2>/dev/null)
+    echo "${artist:-Offline}"
+}
+
+## Get elapsed time (current position)
+get_ctime() {
+    ctime=$(playerctl position 2>/dev/null | awk '{printf "%d:%02d\n", int($1/60), int($1%60)}')
+    echo "${ctime:-0:00}"
+}
+
+## Get total time
+get_ttime() {
+    ttime=$(playerctl metadata mpris:length 2>/dev/null)
+    if [[ -n "$ttime" ]]; then
+        # convert microseconds → minutes:seconds
+        ttime=$((ttime/1000000))
+        printf "%d:%02d\n" $((ttime/60)) $((ttime%60))
+    else
+        echo "0:00"
+    fi
+}
+
+## Get percentage progress
+get_time() {
+    pos=$(playerctl position 2>/dev/null)
+    len=$(playerctl metadata mpris:length 2>/dev/null)
+    if [[ -n "$pos" && -n "$len" && "$len" -gt 0 ]]; then
+        percent=$((100*pos/(len/1000000)))
+        echo "$percent"
+    else
+        echo "0"
+    fi
+}
+
+## Get cover
+get_cover() {
+    cover_url=$(playerctl metadata mpris:artUrl 2>/dev/null)
+    if [[ -n "$cover_url" ]]; then
+        # remove prefix if file://
+        cover_path="${cover_url#file://}"
+        if [[ -f "$cover_path" ]]; then
+            cp "$cover_path" "$COVER"
+            echo "$COVER"
+            exit 0
+        fi
+    fi
+    echo "images/music.png"
+}
+
+## Execute accordingly
+case "$1" in
+    --song)   get_song ;;
+    --artist) get_artist ;;
+    --status) get_status ;;
+    --time)   get_time ;;
+    --ctime)  get_ctime ;;
+    --ttime)  get_ttime ;;
+    --cover)  get_cover ;;
+    --toggle) playerctl play-pause ;;
+    --next)   playerctl next; get_cover ;;
+    --prev)   playerctl previous; get_cover ;;
+esac
+

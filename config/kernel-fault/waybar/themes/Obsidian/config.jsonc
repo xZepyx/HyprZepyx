@@ -4,7 +4,7 @@
 
   // Bar
   "modules-left": ["hyprland/window"],
-  "modules-center": ["custom/playerctl", "custom/playerlabel", "hyprland/workspaces", "clock", "network"],
+  "modules-center": ["custom/playerctl", "custom/playerlabel", "hyprland/workspaces", "network", "clock"],
   "modules-right": ["tray", "pulseaudio", "bluetooth",  "custom/notify"],
 
 
@@ -15,7 +15,7 @@
     "format": "<span size='12000'></span> {:%I:%M %p}",
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "imcoming"
+    "on-click": "bash ~/.config/eww/widgets/scripts/eww-toggle-clock"
   },
 
   "hyprland/workspaces": {
@@ -54,7 +54,7 @@
     "max-length": 30,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}' || echo '{\"text\":\"No Media\"}'",
     "exec-if": "which playerctl",
-    "on-click": "playerctl play-pause",
+    "on-click": "bash ~/.config/eww/widgets/scripts/eww-toggle-music",
     "interval": 3,
   },
   

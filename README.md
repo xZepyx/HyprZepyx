@@ -19,7 +19,7 @@
 A **minimal yet functional** Hyprland configuration focused on speed, clarity, and aesthetics.  
 Designed and maintained by **xZepyx**.  
 
-**Lastest** : Added waybar themes, command : Alt + A
+**Lastest** : Added waybar themes, command : Alt + A and eww widgets added to kernel-fault
 
 > ⚡ **Note:** This setup is tailored for personal use. Some paths or scripts may require adjustments.  
 > 📦 To use the **kernel-fault** theme, install the required packages listed in [`requirements-ignis.txt`](config/kernel-fault/ignis/requirments-ignis.txt).  
@@ -85,9 +85,9 @@ Designed and maintained by **xZepyx**.
   <h2>• Screenshots •</h2>
 </div>
 
-### kernel-fault<sup>ignis</sup> — *“fatal exception: elegance”*  (a.k.a **Ignis Fault**)
+### kernel-fault<sup>ignis+eww</sup> — *“fatal exception: elegance”* 
 
-Widget system: **Ignis** | Support: Yes
+Widget system: **ignis + eww** | Support: Yes
 
 | Widgets | Launcher |
 |:-------:|:--------:|
