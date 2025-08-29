@@ -14,7 +14,7 @@
     "format": "<span size='12000'></span> {:%I:%M %p}",
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "swaync-client -t",
+    "on-click": "ignis toggle-window ignis_CONTROL_CENTER",
   },
   "hyprland/workspaces": {
     "active-only": false,

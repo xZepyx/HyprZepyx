@@ -74,6 +74,7 @@
 
   "hyprland/window": {
     "format": "{title}",
+    "max-length": 54,
     "rewrite": {
       "": "Hyprland"   // if no title, show "Desktop"
     }
