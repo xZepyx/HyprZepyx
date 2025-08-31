@@ -31,7 +31,7 @@ fi
 COMMON_DEPS=(
     hyprland
     waybar
-    rofi-wayland
+    rofi
     kitty
     thunar
     polkit-gnome
@@ -66,10 +66,7 @@ COMMON_DEPS=(
 
 # Extra deps for kernel-fault
 KERNEL_EXTRA=(
-    ignis-shell
     python3
-    python3-pip
-    python3-venv
 )
 
 install_packages() {

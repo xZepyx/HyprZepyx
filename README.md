@@ -22,7 +22,7 @@ Designed and maintained by **xZepyx**.
 **Lastest** : Added waybar themes, command : Alt + A and eww widgets added to kernel-fault
 
 > ⚡ **Note:** This setup is tailored for personal use. Some paths or scripts may require adjustments.  
-> 📦 To use the **kernel-fault** theme, install the required packages listed in [`prerequisites.sh`](prerequisites.sh).  
+> 📦 To install the deps use [`prerequisites.sh`](prerequisites.sh).  
 > 🎨 For best visuals, ensure proper GTK themes and fonts are installed.  
 
 ---
