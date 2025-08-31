@@ -91,7 +91,7 @@ setup_kernel_fault_venv() {
         materialyoucolor
 
     deactivate
-    echo "[✔] Ignis Python venv setup at $VENV_DIR"
+    echo "[✔] Ignis Python venv setup complete"
 }
 
 case "$choice" in
