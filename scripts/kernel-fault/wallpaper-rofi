@@ -44,17 +44,11 @@ element-icon {
 # Set selected wallpaper
 if [ -n "$chosen" ]; then
     full=$(find "$WALL_DIR" -type f -name "$chosen" | head -n1)
-    swww img "$full" --transition-type grow --transition-duration 1
+    matugen image $full
 fi
 
 # Update hyprlock.conf
 wallpath=$(swww query | grep -oP 'image: \K.*')
 sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
-
-wal -i $full
-wal -e $full
-
-killall waybar && waybar &
-killall nwg-dock-hyprland && nwg-dock-hyprland -i 38 -p bottom -c "$HOME/.scripts/kernel-fault/ignis-launcher" &
 
 hyprctl reload

@@ -1,0 +1,48 @@
+
+/* My Mostly Used waybar config incase you wonder :) */
+{
+"include": [
+  "$HOME/.config/waybar/modules/Modules",
+  "$HOME/.config/waybar/modules/ModulesWorkspaces",
+  "$HOME/.config/waybar/modules/ModulesCustom",
+  "$HOME/.config/waybar/modules/ModulesGroups",
+  ],
+"layer": "bottom",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [
+	"clock",
+	"custom/separator#blank",
+	"tray",
+	],
+
+"modules-center": [
+	"group/app_drawer",
+	"custom/separator#dot-line",
+	"hyprland/workspaces#kanji",
+	"custom/separator#dot-line",
+	"group/notify",	
+	],
+
+"modules-right": [
+        //"mpris",
+        //"custom/separator#dot-line",
+	"group/laptop",
+	"custom/separator#blank",
+	"group/mobo_drawer",
+	"custom/separator#line",  
+	"group/audio",
+	"custom/separator#dot-line",
+	"custom/separator#blank", 
+	"group/status",
+	],
+}

@@ -5,6 +5,9 @@
 
 set -e
 
+toilet -f mono9 "HyprZepyx" | lolcat
+echo "Only use this script after copying the dotfiles"
+
 echo "Select Theme:"
 echo "[1] kernel-fault"
 echo "[2] abyss"
@@ -78,7 +81,6 @@ setup_kernel_fault_venv() {
     echo "[+] Setting up Python venv for kernel-fault..."
 
     VENV_DIR="$HOME/.config/ignis/ignis-python-venv"
-    mkdir -p "$HOME/.config/ignis"
 
     python3 -m venv "$VENV_DIR"
     source "$VENV_DIR/bin/activate"
