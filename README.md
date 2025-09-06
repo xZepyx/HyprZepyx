@@ -255,6 +255,7 @@ I am planning a personal website to showcase my projects, dotfiles, and workflow
 - [Rofi](https://github.com/davatorium/rofi)
 - [Eww](https://elkowar.github.io/eww/)
 - [Waybar Project](https://github.com/Alexays/Waybar)
+- Special Thanks to caelestia-dots and end4 dots for actual reference there are no tutorials on youtube for quickshell and these dots really helped me. (I did not copy the code tho)
 
 ---
 
