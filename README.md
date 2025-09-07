@@ -49,18 +49,6 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 ## Screenshots & Visuals
 
-### Spectral-Horizon (quickshell)
-
-| Widgets | Launcher |
-|---------|---------|
-| ![Widgets](.previews/spectral-horizon/widgets.png) | ![Launcher](.previews/spectral-horizon/launcher.png) |
-| Widgets Overview | Launcher (quickshell) |
-
-| Control Center | Desktop |
-|----------------|---------|
-| ![Control Center](.previews/spectral-horizon/control-center.png) | ![Terminal](.previews/spectral-horizon/desktop.png) |
-| Control Center Widgets | Desktop |
-
 ### Kernel-Fault (ignis + eww)
 
 | Widgets | Launcher |
