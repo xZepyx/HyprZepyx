@@ -16,8 +16,6 @@ import Quickshell.Hyprland
 Variants {
     id: root
     readonly property bool fixedClockPosition: Config.options.background.fixedClockPosition
-    readonly property real fixedClockX: Config.options.background.clockX
-    readonly property real fixedClockY: Config.options.background.clockY
     readonly property real clockSizePadding: 20
     readonly property real screenSizePadding: 50
     model: Quickshell.screens
@@ -51,11 +49,6 @@ Variants {
         property int wallpaperHeight: modelData.height // Some reasonable init value, to be updated
         property real movableXSpace: ((wallpaperWidth / wallpaperToScreenRatio * effectiveWallpaperScale) - screen.width) / 2
         property real movableYSpace: ((wallpaperHeight / wallpaperToScreenRatio * effectiveWallpaperScale) - screen.height) / 2
-        // Position
-        property real clockX: (modelData.width / 2) + ((Math.random() < 0.5 ? -1 : 1) * modelData.width)
-        property real clockY: (modelData.height / 2) + ((Math.random() < 0.5 ? -1 : 1) * modelData.height)
-        property var textHorizontalAlignment: clockX < screen.width / 3 ? Text.AlignLeft :
-            (clockX > screen.width * 2 / 3 ? Text.AlignRight : Text.AlignHCenter)
         // Colors
         property color dominantColor: Appearance.colors.colPrimary
         property bool dominantColorIsDark: dominantColor.hslLightness < 0.5
@@ -77,7 +70,6 @@ Variants {
 
         onWallpaperPathChanged: {
             bgRoot.updateZoomScale()
-            // Clock position gets updated after zoom scale is updated
         }
 
         // Wallpaper zoom scale
@@ -113,47 +105,6 @@ Variants {
             }
         }
 
-        // Clock positioning
-        function updateClockPosition() {
-            // Somehow all this manual setting is needed to make the proc correctly use the new values
-            leastBusyRegionProc.path = bgRoot.wallpaperPath
-            leastBusyRegionProc.contentWidth = clockLoader.implicitWidth + root.clockSizePadding * 2
-            leastBusyRegionProc.contentHeight = clockLoader.implicitHeight + root.clockSizePadding * 2
-            leastBusyRegionProc.horizontalPadding = bgRoot.movableXSpace + root.screenSizePadding * 2
-            leastBusyRegionProc.verticalPadding = bgRoot.movableYSpace + root.screenSizePadding * 2
-            leastBusyRegionProc.running = false;
-            leastBusyRegionProc.running = true;
-        }
-        Process {
-            id: leastBusyRegionProc
-            property string path: bgRoot.wallpaperPath
-            property int contentWidth: 300
-            property int contentHeight: 300
-            property int horizontalPadding: bgRoot.movableXSpace
-            property int verticalPadding: bgRoot.movableYSpace
-            command: [Quickshell.shellPath("scripts/images/least_busy_region.py"),
-                "--screen-width", Math.round(bgRoot.screen.width / bgRoot.effectiveWallpaperScale),
-                "--screen-height", Math.round(bgRoot.screen.height / bgRoot.effectiveWallpaperScale),
-                "--width", contentWidth,
-                "--height", contentHeight,
-                "--horizontal-padding", horizontalPadding,
-                "--vertical-padding", verticalPadding,
-                path, 
-                // "--visual-output",
-            ]
-            stdout: StdioCollector {
-                id: leastBusyRegionOutputCollector
-                onStreamFinished: {
-                    const output = leastBusyRegionOutputCollector.text
-                    // console.log("[Background] Least busy region output:", output)
-                    if (output.length === 0) return;
-                    const parsedContent = JSON.parse(output)
-                    bgRoot.clockX = parsedContent.center_x * bgRoot.effectiveWallpaperScale
-                    bgRoot.clockY = parsedContent.center_y * bgRoot.effectiveWallpaperScale
-                    bgRoot.dominantColor = parsedContent.dominant_color || Appearance.colors.colPrimary
-                }
-            }
-        }
 
         // Wallpaper
         Image {

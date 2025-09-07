@@ -61,7 +61,7 @@
             "workspaceZoom": 1
         },
         "quote": "",
-        "showClock": true,
+        "showClock": false,
         "thumbnailPath": "",
         "wallpaperPath": "/home/aditya/Pictures/Wallpapers/117497448_p0.jpg"
     },
@@ -136,7 +136,7 @@
         "autoKillTrays": false
     },
     "dock": {
-        "enable": false,
+        "enable": true,
         "height": 60,
         "hoverRegionHeight": 2,
         "hoverToReveal": true,
@@ -191,7 +191,7 @@
     },
     "overview": {
         "columns": 5,
-        "enable": true,
+        "enable": false,
         "rows": 2,
         "scale": 0.18
     },
