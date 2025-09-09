@@ -53,13 +53,13 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 | Widgets | Launcher |
 |---------|---------|
-| ![Widgets](.previews/kernel-fault/widgets.png) | ![Launcher](.previews/kernel-fault/launcher.png) |
+| ![Widgets](.previews/spectral-horizon/widgets.png) | ![Launcher](.previews/spectral-horizon/launcher.png) |
 | Widgets Overview | Launcher (Ignis) |
 
-| Control Center | Terminal |
+| Wallpaper Menu | Desktop |
 |----------------|---------|
-| ![Control Center](.previews/kernel-fault/control-center.png) | ![Terminal](.previews/kernel-fault/kitty.png) |
-| Control Center Widgets | Terminal Layout |
+| ![wall](.previews/spectral-horizon/wall.png) | ![desktop](.previews/spectral-horizon/desktop.png) |
+| Wallpaper Menu | Terminal Layout |
 
 ### Abyss (eww)
 

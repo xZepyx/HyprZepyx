@@ -1,0 +1,145 @@
+{
+  "position": "top",
+  "layer": "top",
+
+  // Bar
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["custom/playerctl", "custom/playerlabel", "custom/search", "hyprland/workspaces", "network", "clock", "battery"],
+  "modules-right": ["tray", "pulseaudio", "bluetooth",  "custom/notify"],
+
+
+  // Modules configuration
+  
+  "custom/search": {
+    "format": "",
+    "tooltip": "true",
+    "tooltip-format": "Search",
+    "on-click": "qs ipc call overview toggle"
+  },
+  
+  "clock": {
+    "format": "<span size='12000'></span> {:%I:%M %p}",
+    "tooltip": "true",
+    "tooltip-format": "Click to change Wallpaper",
+    "on-click": "qs ipc call wallpaperSelector toggle"
+  },
+  
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "<span foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+    "format-full": "<span foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+    "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
+    "max-length": 10,
+    "class": "capsule"
+  },
+
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true
+  },
+
+  "custom/playerctl": {
+    "format": "{icon}",
+    "return-type": "json",
+    "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"alt\": \"{{status}}\"}' || echo '{\"text\":\"No Media\",\"alt\":\"Stopped\"}'",
+    "exec-if": "which playerctl",
+    "on-click": "playerctl play-pause",
+    "interval": 3,
+    "format-icons": {
+      "Playing": "<span foreground='#E5B9C6'> 󰐌</span>",
+      "Paused": "<span foreground='#928374'> 󰏥</span>",
+      "Stopped": "<span foreground='#665c54'> 󰝚</span>"
+    } 
+  },
+
+  "custom/playerlabel": {
+    "format": "{text}",
+    "return-type": "json",
+    "max-length": 30,
+    "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}' || echo '{\"text\":\"No Media\"}'",
+    "exec-if": "which playerctl",
+    "on-click": "qs ipc call mediaControls toggle",
+    "interval": 3,
+  },
+  
+  "custom/notify": {
+    "format": "<span size='12000'> </span>",
+    "tooltip": "Notifications",
+    "on-click": "qs ipc call sidebarRight toggle",
+    "interval": 0
+  },
+  
+  "bluetooth": {
+    "format": "<span size='12000'> </span>",
+    "format-connected": "<span size='12000' foreground='#8cb6ff'></span>",
+    "tooltip-format": "{status}",
+    "on-click": "blueman-manager"
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 54,
+    "rewrite": {
+      "": "Empty Workspace"   // if no title
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "<span size='12000'></span> {essid} ({signalStrength}%)",
+    "format-ethernet": "<span size='12000'>󰈀</span> {ifname}",
+    "format-disconnected": "<span size='12000' foreground='#928374'>󰖪</span> Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}\nIP: {ipaddr}/{cidr}",
+    "max-length": 50,
+    "interval": 5
+  },
+
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "battery": {
+    "states": {
+      "critical": 15
+    },
+    "format": "<span size='13000'>{icon} </span>{capacity}%",
+    "format-warning": "<span size='13000'>{icon} </span>{capacity}%",
+    "format-critical": "<span size='13000'>{icon} </span>{capacity}%",
+    "format-charging": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+    "format-full": "<span size='13000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+    "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰂂"],
+    "tooltip-format": "Time remaining: {time}\nPower draw: {power}W"
+  }
+}
+
+
