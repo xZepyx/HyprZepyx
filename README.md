@@ -49,7 +49,7 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 ## Screenshots & Visuals
 
-### Kernel-Fault (ignis + eww)
+### Spectral-Horizon (quickshell)
 
 | Widgets | Launcher |
 |---------|---------|
@@ -59,7 +59,19 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 | Wallpaper Menu | Desktop |
 |----------------|---------|
 | ![wall](.previews/spectral-horizon/wall.png) | ![desktop](.previews/spectral-horizon/desktop.png) |
-| Wallpaper Menu | Terminal Layout |
+| Wallpaper Menu | Desktop |
+
+### Kernel-Fault (ignis)
+
+| Widgets | Launcher |
+|---------|---------|
+| ![Widgets](.previews/kernel-fault/widgets.png) | ![Launcher](.previews/kernel-fault/launcher.png) |
+| Widgets Overview | Launcher (Ignis) |
+
+| ControlCenter | Desktop |
+|----------------|---------|
+| ![img](.previews/kernel-fault/cc.png) | ![img](.previews/kernel-fault/kitty.png) |
+| ControlCenter | Terminal Layout |
 
 ### Abyss (eww)
 
