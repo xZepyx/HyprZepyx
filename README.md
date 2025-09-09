@@ -61,7 +61,11 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 | ![wall](.previews/spectral-horizon/wall.png) | ![desktop](.previews/spectral-horizon/desktop.png) |
 | Wallpaper Menu | Desktop |
 
+---
+
 ### Kernel-Fault (ignis)
+
+---
 
 | Widgets | Launcher |
 |---------|---------|
@@ -73,39 +77,10 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 | ![img](.previews/kernel-fault/cc.png) | ![img](.previews/kernel-fault/kitty.png) |
 | ControlCenter | Terminal Layout |
 
-### Abyss (eww)
-
-| Code Editor | Lockscreen |
-|------------|------------|
-| ![Code](.previews/Abyss/Code.png) | ![Hyprlock](.previews/Abyss/hyprlock.png) |
-| VSCode Layout | Minimal Lock |
-
-| Wallpaper Switcher | Eww Minimal |
-|------------------|-------------|
-| ![Rofi Wall](.previews/Abyss/rofi-wayland-wall.png) | ![Eww Minimal](.previews/Abyss/eww-minimal.png) |
-| Rofi Wallpaper Manager | Minimal Widget Set |
-
-### Lumen (glossy)
-
-| Desktop | Lockscreen |
-|---------|------------|
-| ![Desktop](.previews/Lumen/desktop.png) | ![Hyprlock](.previews/Lumen/hyprlock.png) |
-| Idle Desktop | Hyprlock |
-
-| Rofi Apps | Terminal |
-|-----------|---------|
-| ![Rofi Apps](.previews/Lumen/rofi-op.png) | ![Terminal](.previews/Lumen/Terminal.png) |
-| App Launcher | Terminal Layout |
-
----
 
 ### Installation Dependencies
 
-```bash
-sudo pacman -S kitty waybar swww swaync eww rofi hyprland
-```
-
-Alternatively, use the provided script:
+Use the provided script for deps:
 
 ```bash
 bash deps-installer.sh
@@ -201,11 +176,11 @@ cd ~/.config/hyprzepyx
 ```
 2. Install dependencies
 ```
-bash prerequisites.sh
+bash prerequisites.sh && deps-installer.sh
 ```
 3. Copy configs
 ```
-cp -r hyprland/* ~/.config/hyprland/
+Depends on what you want to copy.
 ```
 4. Launch Hyprland
 ```
@@ -214,38 +189,51 @@ hyprland
 
 ---
 
-## Customization & Tips
-
-- Wallpapers: `~/.config/hyprzepyx/wallpapers/`
-- Waybar colors: `~/.config/hyprzepyx/waybar/colors.css`
-- Eww widgets: `~/.config/hyprzepyx/eww/`
-- Keybindings: `~/.config/hyprland/hyprland.conf`
-
-Tips:
+## Tips:
 - Use pseudotiling for improved window management
 - Assign workspace-specific apps
-- Combine Rofi + Eww for a seamless aesthetic workflow
+- Combine Rofi + Eww for a seamless aesthetic workflow (only for abyss)
 
 ---
 
 ## Troubleshooting
 
 - Waybar icons missing: Install FontAwesome or Material Icons
-- Eww widgets missing: Run `eww daemon` before Hyprland
+- Quickshell not working: Run `qs`
+- Eww widgets missing: Run `eww daemon` before Hyprland (for abyss and kernel-fault)
 - Rofi launcher errors: Check `rofi/config.rasi` paths
 - Hyprland crashes: Check `~/.local/share/hyprland.log`
 
 ---
 
-## Website Hosting Request
+## Old Stuff
 
-I am planning a personal website to showcase my projects, dotfiles, and workflows.
+### Abyss (eww)
 
-- No server available
-- Seeking free hosting assistance
-- Will display HyprZepyx, tutorials, and guides
-- Contact: zepyxunderscore@gmail.com
+| Code Editor | Lockscreen |
+|------------|------------|
+| ![Code](.previews/Abyss/Code.png) | ![Hyprlock](.previews/Abyss/hyprlock.png) |
+| VSCode Layout | Minimal Lock |
 
+| Wallpaper Switcher | Eww Minimal |
+|------------------|-------------|
+| ![Rofi Wall](.previews/Abyss/rofi-wayland-wall.png) | ![Eww Minimal](.previews/Abyss/eww-minimal.png) |
+| Rofi Wallpaper Manager | Minimal Widget Set |
+
+### Lumen (glossy)
+
+| Desktop | Lockscreen |
+|---------|------------|
+| ![Desktop](.previews/Lumen/desktop.png) | ![Hyprlock](.previews/Lumen/hyprlock.png) |
+| Idle Desktop | Hyprlock |
+
+| Rofi Apps | Terminal |
+|-----------|---------|
+| ![Rofi Apps](.previews/Lumen/rofi-op.png) | ![Terminal](.previews/Lumen/Terminal.png) |
+| App Launcher | Terminal Layout |
+
+---
+> Thank you hyprwm
 ---
 
 ## Acknowledgments
@@ -255,6 +243,8 @@ I am planning a personal website to showcase my projects, dotfiles, and workflow
 - [Rofi](https://github.com/davatorium/rofi)
 - [Eww](https://elkowar.github.io/eww/)
 - [Waybar Project](https://github.com/Alexays/Waybar)
+- [Quickshell](https://quickshell.org/)
+> end'4 and soromane's dots for inspiration.
 
 ---
 
@@ -277,14 +267,3 @@ Licensed under **GNU GPLv3** — free to use, modify, and redistribute.
 **A:** Yes, fork, edit, and submit a pull request.
 
 ---
-
-## Additional Screenshots
-
-| Minimal Widgets | Dark Launcher |
-|----------------|---------------|
-| ![Minimal](.previews/extra/minimal.png) | ![Dark](.previews/extra/dark-launcher.png) |
-
-| Full Layout | Workspace Icons |
-|------------|----------------|
-| ![Full](.previews/extra/full-layout.png) | ![Icons](.previews/extra/workspace-icons.png) |
-
