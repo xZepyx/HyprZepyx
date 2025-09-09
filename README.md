@@ -5,7 +5,7 @@
 
 
 A powerful, visually stunning Hyprland configuration built for **speed, workflow efficiency, and aesthetics**.
-
+> Website : [https://hyprzepyx.info.gf]
 
 ![Last Commit](https://img.shields.io/github/last-commit/xZepyx/HyprZepyx?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
 ![Stars](https://img.shields.io/github/stars/xZepyx/HyprZepyx?style=for-the-badge&logo=andela&color=86dbd7&logoColor=D9E0EE&labelColor=1E202B)
@@ -14,10 +14,6 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 </div>
 ---
-
-## Visit our Website
-- hyprzepyx.info.gf (Do not use https)
-- hyprzepyx.home.kg (Do not use https)
 
 ## Project Overview
 
