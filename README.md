@@ -15,6 +15,10 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 </div>
 ---
 
+## Visit our Website
+- hyprzepyx.info.gf (Do not use https)
+- hyprzepyx.home.kg (Do not use https)
+
 ## Project Overview
 
 **HyprZepyx** is more than a configuration — in my opinion for me. Designed for **developers, and Linux enthusiasts**, it merges **aesthetic appeal** with **practical functionality**.
