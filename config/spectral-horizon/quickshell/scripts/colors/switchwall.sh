@@ -27,9 +27,13 @@ if [[ -z "$imgpath" ]] || [[ ! -f "$imgpath" ]]; then
     exit 1
 fi
 
-# Apply wallpaper with smooth transition (no upscale)
+# Apply wallpaper with smooth transition 
 swww img "$imgpath" \
     --transition-type any \
     --transition-fps 60 \
     --transition-step 255 \
     --transition-duration 1
+
+
+# Run matugen for color theming
+matugen image "$imgpath"

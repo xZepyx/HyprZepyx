@@ -1,0 +1,15 @@
+[Default Applications]
+application/json=org.gnome.TextEditor.desktop
+text/css=org.gnome.TextEditor.desktop
+text/markdown=org.gnome.TextEditor.desktop
+text/x-qml=org.gnome.TextEditor.desktop
+image/jpeg=org.gnome.Loupe.desktop
+application/x-shellscript=org.gnome.TextEditor.desktop
+
+[Added Associations]
+application/json=org.gnome.TextEditor.desktop;
+text/css=org.gnome.TextEditor.desktop;
+text/markdown=org.gnome.TextEditor.desktop;
+text/x-qml=org.gnome.TextEditor.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
+application/x-shellscript=org.gnome.TextEditor.desktop;

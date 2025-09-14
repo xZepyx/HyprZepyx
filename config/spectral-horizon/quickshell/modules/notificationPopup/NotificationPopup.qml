@@ -39,8 +39,6 @@ Scope {
             anchors {
                 top: parent.top
                 bottom: parent.bottom
-                right: parent.right
-                rightMargin: 4
                 topMargin: 4
             }
             implicitWidth: parent.width - Appearance.sizes.elevationMargin * 2

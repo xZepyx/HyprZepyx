@@ -38,27 +38,9 @@ Item { // Wrapper
 
     property var searchActions: [
         {
-            action: "accentcolor",
-            execute: args => {
-                Quickshell.execDetached([Directories.wallpaperSwitchScriptPath, "--noswitch", "--color", ...(args != '' ? [`${args}`] : [])]);
-            }
-        },
-        {
-            action: "dark",
-            execute: () => {
-                Quickshell.execDetached([Directories.wallpaperSwitchScriptPath, "--mode", "dark", "--noswitch"]);
-            }
-        },
-        {
             action: "randomwallpaper",
             execute: () => {
                 Quickshell.execDetached([Quickshell.shellPath("scripts/colors/random-wall.sh")]);
-            }
-        },
-        {
-            action: "light",
-            execute: () => {
-                Quickshell.execDetached([Directories.wallpaperSwitchScriptPath, "--mode", "light", "--noswitch"]);
             }
         },
         {
@@ -67,8 +49,8 @@ Item { // Wrapper
                 if (!/^(\d+)/.test(args.trim())) { // Invalid if doesn't start with numbers
                     Quickshell.execDetached([
                         "notify-send", 
-                        Translation.tr("Superpaste"), 
-                        Translation.tr("Usage: <tt>%1superpaste NUM_OF_ENTRIES[i]</tt>\nSupply <tt>i</tt> when you want images\nExamples:\n<tt>%1superpaste 4i</tt> for the last 4 images\n<tt>%1superpaste 7</tt> for the last 7 entries").arg(Config.options.search.prefix.action),
+                        ("Superpaste"), 
+                        ("Usage: <tt>%1superpaste NUM_OF_ENTRIES[i]</tt>\nSupply <tt>i</tt> when you want images\nExamples:\n<tt>%1superpaste 4i</tt> for the last 4 images\n<tt>%1superpaste 7</tt> for the last 7 entries").arg(Config.options.search.prefix.action),
                         "-a", "Shell"
                     ]);
                     return;
@@ -227,7 +209,7 @@ Item { // Wrapper
                     color: activeFocus ? Appearance.m3colors.m3onSurface : Appearance.m3colors.m3onSurfaceVariant
                     selectedTextColor: Appearance.m3colors.m3onSecondaryContainer
                     selectionColor: Appearance.colors.colSecondaryContainer
-                    placeholderText: Translation.tr("Search, calculate or run")
+                    placeholderText: ("Find or whatever idc")
                     placeholderTextColor: Appearance.m3colors.m3outline
                     implicitWidth: root.searchingText == "" ? Appearance.sizes.searchWidthCollapsed : Appearance.sizes.searchWidth
 
@@ -360,8 +342,8 @@ Item { // Wrapper
                         nonAppResultsTimer.restart();
                         const mathResultObject = {
                             name: root.mathResult,
-                            clickActionName: Translation.tr("Copy"),
-                            type: Translation.tr("Math result"),
+                            clickActionName: ("Copy"),
+                            type: ("Math result"),
                             fontType: "monospace",
                             materialSymbol: 'calculate',
                             execute: () => {
@@ -370,8 +352,8 @@ Item { // Wrapper
                         };
                         const commandResultObject = {
                             name: searchingText.replace("file://", ""),
-                            clickActionName: Translation.tr("Run"),
-                            type: Translation.tr("Run command"),
+                            clickActionName: ("Run"),
+                            type: ("Run command"),
                             fontType: "monospace",
                             materialSymbol: 'terminal',
                             execute: () => {
@@ -384,8 +366,8 @@ Item { // Wrapper
                         };
                         const webSearchResultObject = {
                             name: root.searchingText,
-                            clickActionName: Translation.tr("Search"),
-                            type: Translation.tr("Search the web"),
+                            clickActionName: ("Search"),
+                            type: ("Search the web"),
                             materialSymbol: 'travel_explore',
                             execute: () => {
                                 let query = root.searchingText;
@@ -404,8 +386,8 @@ Item { // Wrapper
                             if (actionString.startsWith(root.searchingText) || root.searchingText.startsWith(actionString)) {
                                 return {
                                     name: root.searchingText.startsWith(actionString) ? root.searchingText : actionString,
-                                    clickActionName: Translation.tr("Run"),
-                                    type: Translation.tr("Action"),
+                                    clickActionName: ("Run"),
+                                    type: ("Action"),
                                     materialSymbol: 'settings_suggest',
                                     execute: () => {
                                         action.execute(root.searchingText.split(" ").slice(1).join(" "));
@@ -431,8 +413,8 @@ Item { // Wrapper
 
                         //////////////// Apps //////////////////
                         result = result.concat(AppSearch.fuzzyQuery(root.searchingText).map(entry => {
-                            entry.clickActionName = Translation.tr("Launch");
-                            entry.type = Translation.tr("App");
+                            entry.clickActionName = ("Launch");
+                            entry.type = ("App");
                             return entry;
                         }));
 

@@ -45,7 +45,7 @@ Item {
         color: Appearance.colors.colLayer0
         border.width: 1
         border.color: Appearance.colors.colLayer0Border
-        radius: Appearance.rounding.screenRounding - Appearance.sizes.hyprlandGapsOut + 1
+        radius: 15
 
         ColumnLayout {
             anchors.fill: parent
@@ -80,17 +80,6 @@ Item {
                         }
                         StyledToolTip {
                             content: ("Lock-Screen")
-                        }
-                    }
-                    QuickToggleButton {
-                        toggled: false
-                        buttonIcon: "settings"
-                        onClicked: {
-                            GlobalStates.sidebarRightOpen = false;
-                            Quickshell.execDetached(["qs", "-p", root.settingsQmlPath]);
-                        }
-                        StyledToolTip {
-                            content: ("Settings")
                         }
                     }
                     QuickToggleButton {

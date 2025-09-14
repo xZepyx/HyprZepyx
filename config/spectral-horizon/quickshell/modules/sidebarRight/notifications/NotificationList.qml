@@ -108,7 +108,7 @@ Item {
             }
             NotificationStatusButton {
                 buttonIcon: ""
-                buttonText: ("Clear Notifications")
+                buttonText: ("Clear")
                 onClicked: () => {
                     Notifications.discardAllNotifications()
                 }

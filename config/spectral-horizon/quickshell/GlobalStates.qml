@@ -9,10 +9,10 @@ pragma ComponentBehavior: Bound
 
 Singleton {
     id: root
-    property bool sidebarRightOpen: true
+    property bool sidebarRightOpen: false
     property bool mediaControlsOpen: false
     property bool osdBrightnessOpen: false
-    property bool osdVolumeOpen: true
+    property bool osdVolumeOpen: false
     property bool oskOpen: false
     property bool overviewOpen: false
     property bool wallpaperSelectorOpen: false

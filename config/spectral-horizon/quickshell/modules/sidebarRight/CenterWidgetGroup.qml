@@ -17,7 +17,7 @@ Rectangle {
     property int selectedTab: 0
     property var tabButtonList: [
         {"icon": "notifications", "name": ("Notification-Center")},
-        {"icon": "volume_up", "name": ("Audio-Mixer")}
+        {"icon": "volume_up", "name": ("Volume-Mixer")}
     ]
 
     Keys.onPressed: (event) => {
