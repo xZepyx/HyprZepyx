@@ -49,17 +49,6 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 ## Screenshots & Visuals
 
-### Spectral-Horizon (quickshell)
-
-| Widgets | Launcher |
-|---------|---------|
-| ![Widgets](.previews/spectral-horizon/widgets.png) | ![Launcher](.previews/spectral-horizon/launcher.png) |
-| Widgets Overview | Launcher (Ignis) |
-
-| Wallpaper Menu | Desktop |
-|----------------|---------|
-| ![wall](.previews/spectral-horizon/wall.png) | ![desktop](.previews/spectral-horizon/desktop.png) |
-| Wallpaper Menu | Desktop |
 
 ### Kernel-Fault (ignis)
 
@@ -72,30 +61,6 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 |----------------|---------|
 | ![img](.previews/kernel-fault/cc.png) | ![img](.previews/kernel-fault/kitty.png) |
 | ControlCenter | Terminal Layout |
-
-### Abyss (eww)
-
-| Code Editor | Lockscreen |
-|------------|------------|
-| ![Code](.previews/Abyss/Code.png) | ![Hyprlock](.previews/Abyss/hyprlock.png) |
-| VSCode Layout | Minimal Lock |
-
-| Wallpaper Switcher | Eww Minimal |
-|------------------|-------------|
-| ![Rofi Wall](.previews/Abyss/rofi-wayland-wall.png) | ![Eww Minimal](.previews/Abyss/eww-minimal.png) |
-| Rofi Wallpaper Manager | Minimal Widget Set |
-
-### Lumen (glossy)
-
-| Desktop | Lockscreen |
-|---------|------------|
-| ![Desktop](.previews/Lumen/desktop.png) | ![Hyprlock](.previews/Lumen/hyprlock.png) |
-| Idle Desktop | Hyprlock |
-
-| Rofi Apps | Terminal |
-|-----------|---------|
-| ![Rofi Apps](.previews/Lumen/rofi-op.png) | ![Terminal](.previews/Lumen/Terminal.png) |
-| App Launcher | Terminal Layout |
 
 ---
 
@@ -237,14 +202,44 @@ Tips:
 
 ---
 
-## Website Hosting Request
+## Old Stuff
 
-I am planning a personal website to showcase my projects, dotfiles, and workflows.
+### Spectral-Horizon (quickshell)
 
-- No server available
-- Seeking free hosting assistance
-- Will display HyprZepyx, tutorials, and guides
-- Contact: zepyxunderscore@gmail.com
+| Widgets | Launcher |
+|---------|---------|
+| ![Widgets](.previews/spectral-horizon/widgets.png) | ![Launcher](.previews/spectral-horizon/launcher.png) |
+| Widgets Overview | Launcher (Ignis) |
+
+| Wallpaper Menu | Desktop |
+|----------------|---------|
+| ![wall](.previews/spectral-horizon/wall.png) | ![desktop](.previews/spectral-horizon/desktop.png) |
+| Wallpaper Menu | Desktop |
+
+### Abyss (eww)
+
+| Code Editor | Lockscreen |
+|------------|------------|
+| ![Code](.previews/Abyss/Code.png) | ![Hyprlock](.previews/Abyss/hyprlock.png) |
+| VSCode Layout | Minimal Lock |
+
+| Wallpaper Switcher | Eww Minimal |
+|------------------|-------------|
+| ![Rofi Wall](.previews/Abyss/rofi-wayland-wall.png) | ![Eww Minimal](.previews/Abyss/eww-minimal.png) |
+| Rofi Wallpaper Manager | Minimal Widget Set |
+
+### Lumen (glossy)
+
+| Desktop | Lockscreen |
+|---------|------------|
+| ![Desktop](.previews/Lumen/desktop.png) | ![Hyprlock](.previews/Lumen/hyprlock.png) |
+| Idle Desktop | Hyprlock |
+
+| Rofi Apps | Terminal |
+|-----------|---------|
+| ![Rofi Apps](.previews/Lumen/rofi-op.png) | ![Terminal](.previews/Lumen/Terminal.png) |
+| App Launcher | Terminal Layout |
+
 
 ---
 
