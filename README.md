@@ -39,17 +39,19 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 ## Screenshots & Visuals
 
 
-### Kernel-Fault (ignis)
+### Kernel-Fault<sup>ignis</sup>
 
-| Widgets | Launcher |
-|---------|---------|
-| ![Widgets](.previews/kernel-fault/widgets.png) | ![Launcher](.previews/kernel-fault/launcher.png) |
-| Widgets Overview | Launcher (Ignis) |
+## Widgets
+![Widgets](.previews/kernel-fault/widgets.png) 
 
-| ControlCenter | Desktop |
-|----------------|---------|
-| ![img](.previews/kernel-fault/cc.png) | ![img](.previews/kernel-fault/kitty.png) |
-| ControlCenter | Terminal Layout |
+## Launcher
+![Launcher](.previews/kernel-fault/launcher.png) 
+
+## ControlCenter 
+![img](.previews/kernel-fault/cc.png) 
+
+## Desktop 
+![img](.previews/kernel-fault/kitty.png) 
 
 **Note:** Adjust paths in scripts if you have a custom setup.
 
