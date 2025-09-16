@@ -6,11 +6,10 @@
 
 A powerful, visually stunning Hyprland configuration built for **speed, workflow efficiency, and aesthetics**.
 
-
 ![Last Commit](https://img.shields.io/github/last-commit/xZepyx/HyprZepyx?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
 ![Stars](https://img.shields.io/github/stars/xZepyx/HyprZepyx?style=for-the-badge&logo=andela&color=86dbd7&logoColor=D9E0EE&labelColor=1E202B)
 ![Repo Size](https://img.shields.io/github/repo-size/xZepyx/HyprZepyx?color=86dbce&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
-
+> Our Website [https://hyprzepyx.info.gf]
 
 </div>
 ---
@@ -18,16 +17,6 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 ## Project Overview
 
 **HyprZepyx** is more than a configuration — in my opinion for me. Designed for **developers, and Linux enthusiasts**, it merges **aesthetic appeal** with **practical functionality**.
-
-### Features at a Glance
-
-- Lightning-fast workspace management
-- Persistent workspaces 1–9 with dynamic app icons
-- Integrated **Eww widgets** for system stats, weather, and battery
-- Themeable **Waybar** with workspace-aware modules
-- Customizable **Rofi launchers** for apps and wallpapers
-- Advanced **pseudotiling, floating windows, and fullscreen toggles**
-- Preconfigured scripts to enhance productivity
 
 ---
 
@@ -62,20 +51,6 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 | ![img](.previews/kernel-fault/cc.png) | ![img](.previews/kernel-fault/kitty.png) |
 | ControlCenter | Terminal Layout |
 
----
-
-### Installation Dependencies
-
-```bash
-sudo pacman -S kitty waybar swww swaync eww rofi hyprland
-```
-
-Alternatively, use the provided script:
-
-```bash
-bash deps-installer.sh
-```
-
 **Note:** Adjust paths in scripts if you have a custom setup.
 
 ---
@@ -86,74 +61,7 @@ bash deps-installer.sh
 - **Fonts:** FiraCode, JetBrainsMono, or any monospaced font
 - **Icons:** Papirus, Tela, or flat icon packs
 - **Terminal Colors:** Solarized Dark or Gruvbox preferred
-
----
-
-## Keybindings
-
-### General Actions
-
-| Combo           | Action                                |
-|-----------------|---------------------------------------|
-| Super + Enter   | Launch Kitty Terminal                  |
-| Super + C       | Kill focused window                    |
-| Super + M       | Exit Hyprland session                  |
-| Super + E       | Open file manager (Nautilus)          |
-| Super + V       | Toggle floating window                 |
-| Super + D       | Open Rofi app launcher                 |
-| Super + Q       | Open power menu                        |
-| Super + P       | Toggle pseudotiling                    |
-| Super + J       | Toggle split mode                      |
-| Super + Space   | Toggle fullscreen                      |
-| Super + B       | Open wallpaper switcher                |
-| Super + W       | Launch Firefox                         |
-| Super + F       | Launch text editor                     |
-| Alt + L         | Lock screen (Hyprlock)                 |
-| Alt + D         | Region screenshot (grim+slurp)        |
-
-### Workspace Controls
-
-| Combo                   | Action                       |
-|-------------------------|-------------------------------|
-| Super + [1-0]           | Switch workspace             |
-| Super + Shift + [1-0]   | Move window to workspace      |
-| Super + Arrow Keys       | Move focus between windows    |
-| Super + Mouse Wheel      | Cycle through workspaces      |
-
-### Mouse Controls
-
-| Combo               | Action                  |
-|--------------------|------------------------|
-| Super + Left Click  | Move window             |
-| Super + Right Click | Resize window           |
-
-### Media / Volume / Brightness
-
-| Key                       | Action           |
-|---------------------------|-----------------|
-| XF86AudioRaiseVolume      | Volume +5%       |
-| XF86AudioLowerVolume      | Volume -5%       |
-| XF86AudioMute             | Toggle mute      |
-| XF86AudioMicMute          | Toggle mic mute  |
-| XF86MonBrightnessUp       | Brightness +5%   |
-| XF86MonBrightnessDown     | Brightness -5%   |
-| XF86AudioNext             | Next Track       |
-| XF86AudioPrev             | Previous Track   |
-| XF86AudioPlay             | Play/Pause       |
-
----
-
-## Autostarted Apps
-
-- kitty — Terminal
-- waybar — Status bar
-- swww-daemon — Wallpaper manager
-- swaync — Notifications
-- eww — Widgets
-- rofi — App and wallpaper launcher
-- hyprland — Core window manager
-
-Each app is **optimized for performance and minimal resource usage**.
+> Each app is **optimized for performance and minimal resource usage**.
 
 ---
 
@@ -161,16 +69,16 @@ Each app is **optimized for performance and minimal resource usage**.
 
 1. Clone repository
 ```
-git clone https://github.com/xZepyx/HyprZepyx.git ~/.config/hyprzepyx
-cd ~/.config/hyprzepyx
+git clone https://github.com/xZepyx/HyprZepyx.git ~/hyprzepyx
+cd ~/hyprzepyx
 ```
 2. Install dependencies
 ```
-bash prerequisites.sh
+bash deps-installer.sh #(prerequities is now deprecated and removed.)
 ```
 3. Copy configs
 ```
-cp -r hyprland/* ~/.config/hyprland/
+do it yourself i'm so tired of typing this now.
 ```
 4. Launch Hyprland
 ```
@@ -179,17 +87,8 @@ hyprland
 
 ---
 
-## Customization & Tips
-
-- Wallpapers: `~/.config/hyprzepyx/wallpapers/`
-- Waybar colors: `~/.config/hyprzepyx/waybar/colors.css`
-- Eww widgets: `~/.config/hyprzepyx/eww/`
-- Keybindings: `~/.config/hyprland/hyprland.conf`
-
-Tips:
-- Use pseudotiling for improved window management
-- Assign workspace-specific apps
-- Combine Rofi + Eww for a seamless aesthetic workflow
+> Use these !!!!!!!!
+- Wallpapers: ![wallbank](https://github.com/xZepyx/Wallbank)
 
 ---
 
@@ -243,43 +142,23 @@ Tips:
 
 ---
 
-## Acknowledgments
+## Special Thanks
 
-- [Hyprland](https://github.com/hyprwm/hyprland)
+- [Hyprland](https://github.com/hyprwm/hyprland) > It's insane
+- [Quickshell](https://github.com/quickshell-mirror/quickshell)
 - [Ignis Project](https://github.com/ignis-sh/ignis)
 - [Rofi](https://github.com/davatorium/rofi)
 - [Eww](https://elkowar.github.io/eww/)
-- [Waybar Project](https://github.com/Alexays/Waybar)
+- [Waybar](https://github.com/Alexays/Waybar)
+
+> end'4 and soromane's dots for inspiration (spectral-horizon theme)
 
 ---
 
 ## License
 
-© 2025–2040 Aditya Yadav (zepyxunderscore@gmail.com)
+© 2025–2040 xZepyx(Aditya Yadav) (zepyxunderscore@gmail.com)
 Licensed under **GNU GPLv3** — free to use, modify, and redistribute.
 
 ---
-
-## FAQ
-
-**Q:** Can I use this on Sway?
-**A:** Hyprland-specific, but some widgets may be adapted.
-
-**Q:** How to update HyprZepyx?
-**A:** Pull latest repo and reapply configs.
-
-**Q:** Can I contribute?
-**A:** Yes, fork, edit, and submit a pull request.
-
----
-
-## Additional Screenshots
-
-| Minimal Widgets | Dark Launcher |
-|----------------|---------------|
-| ![Minimal](.previews/extra/minimal.png) | ![Dark](.previews/extra/dark-launcher.png) |
-
-| Full Layout | Workspace Icons |
-|------------|----------------|
-| ![Full](.previews/extra/full-layout.png) | ![Icons](.previews/extra/workspace-icons.png) |
 
