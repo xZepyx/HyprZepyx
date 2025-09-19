@@ -63,7 +63,7 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 | ControlCenter | Kitty |
 |----------------|---------|
-| ![wall](.previews/kernel-faut/cc.png) | ![desktop](.previews/kernel-fault/kitty.png) |
+| ![wall](.previews/kernel-fault/cc.png) | ![desktop](.previews/kernel-fault/kitty.png) |
 | ControlCenter | Kitty |
 
 **Note:** Adjust paths in scripts if you have a custom setup.
