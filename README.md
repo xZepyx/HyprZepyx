@@ -44,7 +44,7 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 | Desktop | Launcher |
 |---------|---------|
-| ![Widgets](.previews/quient-fracture/desktop.png) | ![Launcher](.previews/quiet-fracture/launcher.png) |
+| ![Widgets](.previews/quiet-fracture/desktop.png) | ![Launcher](.previews/quiet-fracture/launcher.png) |
 | Desktop | Launcher (Rofi) |
 
 | Wallpaper Menu | Swaync |
