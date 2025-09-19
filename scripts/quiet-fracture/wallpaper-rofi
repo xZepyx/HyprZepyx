@@ -45,10 +45,11 @@ element-icon {
 if [ -n "$chosen" ]; then
     full=$(find "$WALL_DIR" -type f -name "$chosen" | head -n1)
     matugen image "$full"
+    swww img "$full" --transition-fps 60 --transition-type random
 fi 
 
 # Update hyprlock.conf (Only use when you want to have dynamic wallpaper)
-# wallpath=$(swww query | grep -oP 'image: \K.*')
-# sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
+wallpath=$(swww query | grep -oP 'image: \K.*')
+sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
 
 hyprctl reload
