@@ -28,30 +28,43 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 ### Latest Updates
 
+- Added new theme **Quiet-Fracture** | Best theme so far.
+- Adaptive color shemes
 - Added new **Waybar themes** with adaptive colors
-- Integrated **`Alt + A` command** for automation
-- Expanded **Eww widget suite** in `kernel-fault`
-- Improved **workspace management scripts**
-- Updated **documentation and screenshots** for clarity
+- Integrated **`Alt + A` command** for change
+
 
 ---
 
-## Screenshots & Visuals
+# Screenshots & Visuals
 
 
-### Kernel-Fault<sup>ignis</sup>
+## Quiet-Fracture
+> Widget system: None | Support: Yes
 
-## Widgets
-![Widgets](.previews/kernel-fault/widgets.png) 
+| Desktop | Launcher |
+|---------|---------|
+| ![Widgets](.previews/quient-fracture/desktop.png) | ![Launcher](.previews/quiet-fracture/launcher.png) |
+| Desktop | Launcher (Rofi) |
 
-## Launcher
-![Launcher](.previews/kernel-fault/launcher.png) 
+| Wallpaper Menu | Swaync |
+|----------------|---------|
+| ![wall](.previews/quiet-fracture/wall.png) | ![desktop](.previews/quiet-fracture/swaync.png) |
+| Wallpaper Menu | Swaync |
 
-## ControlCenter 
-![img](.previews/kernel-fault/cc.png) 
 
-## Desktop 
-![img](.previews/kernel-fault/kitty.png) 
+## Kernel-Fault<sup>ignis</sup>
+> Widget system: ignis | Support: Yes
+
+| Widgets | Launcher |
+|---------|---------|
+| ![Widgets](.previews/kernel-fault/widgets.png) | ![Launcher](.previews/kernel-fault/launcher.png) |
+| Widgets Overview | Launcher (Ignis) |
+
+| ControlCenter | Kitty |
+|----------------|---------|
+| ![wall](.previews/kernel-faut/cc.png) | ![desktop](.previews/kernel-fault/kitty.png) |
+| ControlCenter | Kitty |
 
 **Note:** Adjust paths in scripts if you have a custom setup.
 
@@ -110,7 +123,7 @@ hyprland
 | Widgets | Launcher |
 |---------|---------|
 | ![Widgets](.previews/spectral-horizon/widgets.png) | ![Launcher](.previews/spectral-horizon/launcher.png) |
-| Widgets Overview | Launcher (Ignis) |
+| Widgets Overview | Launcher (QS) |
 
 | Wallpaper Menu | Desktop |
 |----------------|---------|

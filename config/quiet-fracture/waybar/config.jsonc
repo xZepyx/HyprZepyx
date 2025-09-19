@@ -1,0 +1,82 @@
+{
+    "position": "left",
+    "layer": "top",
+    
+    // Modules
+
+    "modules-left": [
+        "clock"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "tray", "pulseaudio", "custom/notifications", "network"
+    ],
+
+    // Modules Customization
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "cursor": "pointer",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "tray": {
+        "orientation": "inherit",
+        "icon-size": 18,
+        "spacing": 20
+    },
+
+    "clock": {
+        "format": "{:%H\n%M}",
+        "interval": 1,
+        "tooltip-format": "<tt>{calender}</tt>",
+        "calender": {
+            "format": {
+                "today": "<span color='#fAfBfc'><b>{}</span>"
+            }
+        }
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon}",
+        "format-disconnected": "󰤭",
+        "format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+        "max-length": 50,
+        "tooltip-format": "Connected to {essid}", 
+    },
+
+   "custom/notifications": {
+     "format": "<span size='12000'>󰂚</span>",
+     "tooltip": false,
+     "on-click": "swaync-client -t",
+     "interval": 0
+   },
+
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", ""]
+    },
+    "tooltip": false,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  }
+  
+}

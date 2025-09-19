@@ -1,0 +1,83 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "SF Pro Dispay", "JetBrainsMono Nerd Font Propo";
+    padding: 0;
+    margin: 0;
+    min-width: 10px;
+}
+
+window#waybar {
+    background-color: alpha(@background, 0.8);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.922);
+}
+
+tooltip {
+    background: transparent;
+    border: 1px solid @primary;
+    border-radius: 3px;
+}
+
+tooltip label {
+    color: @on_background;
+}
+
+#workspaces {
+    min-width: 0;
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button {
+    color: transparent;
+    background: linear-gradient(100deg, @surface_variant 0%, @surface_container 100%);
+    transition: all 0.3s ease-in-out;
+    min-width: 0;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+#workspaces button.active {
+    background: linear-gradient(100deg, @primary 0%, @tertiary 100%);
+    color: transparent;
+    transition: all 0.3s ease-in-out;
+    font-size: 13px;
+    border-radius: 9999px;
+    min-height: 80px;
+}
+
+#workspaces button:hover {
+    background: linear-gradient(100deg, @tertiary 0%, @primary 100%);
+    color: transparent;
+    border-radius: 16px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+#clock {
+    color: @primary;
+    font-family: "PP Neue Machina";
+    font-weight: 600;
+    font-size: 28px;
+    margin: 8px 5px 1 5px;
+}
+
+#network, #custom-notifications, #pulseaudio {
+    background: @surface_container;
+    padding: 4px 12px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#tray {
+    background: @surface;
+    margin: 5px;
+    border-radius: 28px;
+    padding: 0px 12px;
+}
+

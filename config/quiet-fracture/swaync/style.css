@@ -1,0 +1,206 @@
+/* Import Matugen-generated dynamic colors */
+@import url("colors.css");
+
+/* Config */
+* {
+    font-family: "JetbrainsMono NFP SemiBold";
+    font-style: italic;
+}
+
+/* Notification */
+.notification {
+    background: @background;
+    color: @on_background;
+    border: 3px solid @outline;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.body {
+    color: @on_background;
+}
+
+.summary {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @primary;
+    text-shadow: none;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @on_background;
+    text-shadow: none;
+    margin-right: 18px;
+}
+
+.close-button {
+    background-color: @error;
+    color: @on_surface;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: @on_background;
+    background: transparent;
+}
+
+.notification.critical progress {
+    background-color: @error;
+}
+
+.notification.low progress,
+.notification.normal progress {
+    background-color: @primary;
+}
+
+/* Control Center */
+.control-center {
+    background-color: @background;
+    color: @on_background;
+    border: 3px solid @outline;
+    padding: 10px;
+}
+
+/* Notifications expanded-group */
+.notification-group {
+    background-color: transparent;
+    margin: 2px 8px 2px 8px;
+    font-size: 14px;
+}
+
+.notification-group-icon {
+    color: @on_background;
+}
+
+.notification-group-headers {
+    color: @on_background;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    background: @primary;
+    color: @on_surface;
+    margin: 4px;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+    background: @error;
+    color: @on_surface;
+}
+
+/* widget title */
+.widget-title {
+    color: @on_background;
+}
+.widget-title>button {
+    font-size: 1rem;
+    color: @on_background;
+    background: @surface_container_high;
+    box-shadow: none;
+}
+
+.widget-title>button:hover {
+    background: @error;
+    color: @on_surface;
+}
+
+/* widget button grid */
+button {
+    border: 0px;
+    min-width: 35px;
+    background: @surface_container;
+}
+
+.widget-buttons-grid {
+    font-size: x-large;
+    background: @surface_container_high;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    color: @on_background;
+    margin: 8px;
+    padding: 10px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: alpha(@on_background, 0.55);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background: @primary;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+    color: @on_surface;
+}
+
+/* dnd widget */
+.widget-dnd {
+    background: transparent;
+    border: 1px solid transparent;
+    font-size: large;
+    color: @on_background;
+}
+
+.widget-dnd>label {
+    color: @on_background;
+}
+
+.widget-dnd>switch {
+    background: @surface_container;
+    color: @on_background;
+    border-radius: 6px;
+}
+
+.widget-dnd>switch:checked {
+    background: @error;
+    border: 1px solid @error;
+}
+
+/* volume & backlight widget */
+.widget-volume,
+.widget-backlight {
+    background: @surface_container_high;
+    color: @on_background;
+    font-size: x-large;
+}
+
+/* music player widget */
+.widget-mpris {
+    background: transparent;
+    margin: 8px;
+}
+
+.widget-mpris button {
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+.widget-mpris button:hover {
+    background-color: @primary;
+    color: @on_surface;
+}
+
+/* sliders in backlight and volume */
+trough slider {
+    background: @on_background;
+}
+
+trough slider:hover {
+    background: @primary;
+}
+
+trough highlight {
+    background: @primary;
+}
+

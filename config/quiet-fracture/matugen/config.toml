@@ -1,0 +1,47 @@
+[config.wallpaper] # Yep (BTW YEP MEANS THIS IS WORKING I ADDED IT AS I WAS WORKING ON COLOR SHEMES )
+command = "swww"
+arguments = ["img", "--transition-type", "any", "--transition-fps", "60"]
+set = true
+
+[templates.waybar] # Yep
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.kitty] # Yep
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = "kill -SIGUSR1 $(pidof kitty)"
+
+[templates.hyprland] # Yep
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/conf/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.cava] # Yep
+input_path = '~/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'
+post_hook = "pkill -USR1 cava"
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/swaync/colors.css'
+post_hook = 'swaync-client -rs' 
+
+[templates.wlogout]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/wlogout/colors.css'
+
