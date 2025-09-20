@@ -1,0 +1,8 @@
+show=drun
+width=500
+height=500
+always_parse_args=true
+show_all=false
+print_command=true
+insensitive=true
+prompt= Find Apps 

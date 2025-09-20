@@ -15,31 +15,7 @@ while IFS= read -r img; do
 done < <(find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \))
 
 # Run rofi to select
-chosen=$(printf "$entries" | rofi -dmenu \
-    -show-icons \
-    -icon-theme "Papirus" \
-    -theme-str '
-* {
-  font: "JetBrainsMono Nerd Font 12";
-}
-window {
-  width: 60%;
-  background-color: #1e1e2e;
-  padding: 10px;
-}
-listview {
-  lines: 4;
-  columns: 3;
-  spacing: 20px;
-}
-element {
-  padding: 10px;
-  border-radius: 10px;
-}
-element-icon {
-  size: 128px;
-}
-')
+chosen=$(printf "$entries" | wofi --show dmenu)
 
 # Set selected wallpaper
 if [ -n "$chosen" ]; then
@@ -48,8 +24,8 @@ if [ -n "$chosen" ]; then
     swww img "$full" --transition-fps 60 --transition-type random
 fi 
 
-# Update hyprlock.conf (Only use when you want to have dynamic wallpaper)
-wallpath=$(swww query | grep -oP 'image: \K.*')
-sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
+# Update hyprlock.conf (not needed now as matugen vars fix this issue)
+# wallpath=$(swww query | grep -oP 'image: \K.*')
+# sed -i "s|^ *path = .*|    path = $wallpath|" ~/.config/hypr/hyprlock.conf
 
 hyprctl reload

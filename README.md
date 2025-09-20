@@ -119,6 +119,7 @@ hyprland
 ## Old Stuff
 
 ### Spectral-Horizon (quickshell)
+> Widget system: quickshell | Support: No
 
 | Widgets | Launcher |
 |---------|---------|
@@ -131,6 +132,7 @@ hyprland
 | Wallpaper Menu | Desktop |
 
 ### Abyss (eww)
+> Widget system: eww (a bit) | Support: Legacy
 
 | Code Editor | Lockscreen |
 |------------|------------|
@@ -143,6 +145,7 @@ hyprland
 | Rofi Wallpaper Manager | Minimal Widget Set |
 
 ### Lumen (glossy)
+> Widget system: none | Support: No
 
 | Desktop | Lockscreen |
 |---------|------------|
@@ -156,6 +159,14 @@ hyprland
 
 
 ---
+
+## Todo :
+
+- Use Walker instead of wofi (will be added soon)
+- Better WallpaperSwitcher
+- Provide a install script
+- Separate deps by themes
+
 
 ## Special Thanks
 

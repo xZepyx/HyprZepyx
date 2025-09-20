@@ -1,75 +1,150 @@
 #!/usr/bin/env bash
-set -e
 
-cd "$(dirname "$0")"
-export base="$(pwd)"
+# ----------------------------------------------------------
+# Dependencies for HyprZepyx
+# ----------------------------------------------------------
 
-# Load helpers if you have any, otherwise remove these lines
-source ./scriptdata/environment-variables
-source ./scriptdata/functions
-source ./scriptdata/installers
-source ./scriptdata/options
+packages=(
+    "wget"
+    "unzip"
+    "git"
+    "gum"    
+    "hyprland"
+    "waybar"
+    "swww"
+    "wofi"
+    "nvim"
+    "nwg-dock-hyprland"
+    "nautilus"
+    "dolphin"
+    "chromium"
+    "quickshell"
+    "ignis-git"
+    "nerd-fonts"
+    "rofi-wayland"
+    "kitty"
+    "dunst"
+    "thunar"
+    "xdg-desktop-portal-hyprland"
+    "qt5-wayland"
+    "qt6-wayland"
+    "hyprpaper"
+    "hyprlock"
+    "firefox"
+    "ttf-font-awesome"
+    "vim"
+    "fastfetch"
+    "ttf-fira-sans" 
+    "ttf-fira-code" 
+    "ttf-firacode-nerd"
+    "jq"
+    "brightnessctl"
+    "networkmanager"
+    "wireplumber"
+    "wlogout"
+    "flatpak"
+)
 
-# Ensure Arch-based system
-if ! command -v pacman >/dev/null 2>&1; then
-  printf "\e[31m[$0]: pacman not found, system not Arch-based. Aborting...\e[0m\n"
-  exit 1
-fi
+# ----------------------------------------------------------
+# Colors
+# ----------------------------------------------------------
 
-# Prevent running as root
-prevent_sudo_or_root
+GREEN='\033[0;32m'
+NONE='\033[0m'
 
-# Ask before executing commands
-ask=true
-printf "Do you want to confirm every time before a command executes? [y/N]: "
-read -r p
-case $p in
-  n|N) ask=false ;;
-  *) ask=true ;;
-esac
+# ----------------------------------------------------------
+# Check if command exists
+# ----------------------------------------------------------
 
-printf "\e[36m[$0]: 1. Update system and install base packages\e[0m\n"
+_checkCommandExists() {
+    command -v "$1" >/dev/null 2>&1
+}
 
-# System update
-case $SKIP_SYSUPDATE in
-  true) sleep 0;;
-  *) $ask && sudo pacman -Syu || sudo pacman -Syu --noconfirm ;;
-esac
+# ----------------------------------------------------------
+# Check if package is already installed
+# ----------------------------------------------------------
 
-# Read package list (you can define DEPLISTFILE with required packages)
-remove_bashcomments_emptylines "${DEPLISTFILE}" ./cache/dependencies_stripped.conf
-readarray -t pkglist < ./cache/dependencies_stripped.conf
+_isInstalled() {
+    pacman -Qs "$1" >/dev/null 2>&1
+}
 
-# Ensure yay is installed
-if ! command -v yay >/dev/null 2>&1; then
-  echo -e "\e[33m[$0]: \"yay\" not found. Installing...\e[0m"
-  showfun install-yay
-  v install-yay
-fi
+# ----------------------------------------------------------
+# Install yay (AUR helper) if needed
+# ----------------------------------------------------------
 
-# Install packages from list
-if (( ${#pkglist[@]} != 0 )); then
-  if $ask; then
-    for i in "${pkglist[@]}"; do
-      v yay -S --needed "$i"
+_installYay() {
+    echo ":: Installing yay..."
+    sudo pacman -S --needed --noconfirm base-devel git
+    tmp_dir=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$tmp_dir/yay"
+    pushd "$tmp_dir/yay" || exit
+    makepkg -si --noconfirm
+    popd || exit
+    rm -rf "$tmp_dir"
+    echo ":: yay installed successfully."
+}
+
+# ----------------------------------------------------------
+# Install packages
+# ----------------------------------------------------------
+
+_installPackages() {
+    for pkg in "$@"; do
+        if _isInstalled "$pkg"; then
+            echo ":: ${pkg} is already installed."
+        else
+            echo ":: Installing ${pkg}..."
+            yay --noconfirm -S "$pkg"
+        fi
     done
-  else
-    v yay -S --needed --noconfirm "${pkglist[*]}"
-  fi
+}
+
+# ----------------------------------------------------------
+# Header
+# ----------------------------------------------------------
+
+clear
+echo -e "${GREEN}"
+cat <<"EOF"
+   ____    __          
+  / __/__ / /___ _____ 
+ _\ \/ -_) __/ // / _ \
+/___/\__/\__/\_,_/ .__/
+                /_/    
+HyprZepyx Dependency Installer for Arch-based distros
+EOF
+echo -e "${NONE}"
+
+# ----------------------------------------------------------
+# Confirm start
+# ----------------------------------------------------------
+
+read -p "Do you want to start installing dependencies? (Y/n): " yn
+if [[ ! $yn =~ ^[Yy]$ ]]; then
+    echo ":: Installation canceled."
+    exit 0
 fi
 
-# Handle deprecated dependencies if any
-showfun handle-deprecated-dependencies
-v handle-deprecated-dependencies
+# ----------------------------------------------------------
+# Install yay if needed
+# ----------------------------------------------------------
 
-# Install Python packages
-showfun install-python-packages
-v install-python-packages
+if _checkCommandExists "yay"; then
+    echo ":: yay is already installed."
+else
+    _installYay
+fi
 
-# Optional: Add user to required groups
-v sudo usermod -aG video,i2c,input "$(whoami)"
-v bash -c "echo i2c-dev | sudo tee /etc/modules-load.d/i2c-dev.conf"
-v sudo systemctl enable bluetooth --now
+# ----------------------------------------------------------
+# Install all dependencies
+# ----------------------------------------------------------
 
-printf "\n\e[36m[$0]: Dependency installation complete!\e[0m\n"
+_installPackages "${packages[@]}"
+
+# ----------------------------------------------------------
+# Completed
+# ----------------------------------------------------------
+
+echo ":: All dependencies installed successfully."
+echo ":: You can now clone and use the HyprZepyx project without touching configs."
 

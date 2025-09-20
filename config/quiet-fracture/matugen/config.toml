@@ -18,30 +18,32 @@ input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/conf/colors.conf'
 post_hook = 'hyprctl reload'
 
-[templates.gtk3]
+[templates.gtk3] # IDK
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/colors.css'
 
-[templates.gtk4]
+[templates.gtk4] # IDK
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
 post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
 
-[templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
+[templates.wofi] # Yep
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/wofi/colors.css'
+post_hook = 'echo -n "" > ~/.config/wofi/style.css && cat ~/.config/wofi/colors.css ~/.config/wofi/style > ~/.config/wofi/style.css'
+
 
 [templates.cava] # Yep
 input_path = '~/.config/matugen/templates/matugen-cava'
 output_path = '~/.config/cava/config'
 post_hook = "pkill -USR1 cava"
 
-[templates.swaync]
+[templates.swaync] # Yep
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/swaync/colors.css'
 post_hook = 'swaync-client -rs' 
 
-[templates.wlogout]
+[templates.wlogout] # Yep
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/wlogout/colors.css'
 
