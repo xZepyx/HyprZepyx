@@ -14,7 +14,7 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
   <img src="https://img.shields.io/badge/Maintenance-Actively%20Maintained-6BCB77?style=for-the-badge&logo=vercel&logoColor=D9E0EE&labelColor=1E202B" alt="Maintenance" />
 </p>
 
->  Our Website → [https://hyprzepyx.info.gf](https://hyprzepyx.info.gf)
+> {Our Website → [https://hyprzepyx.info.gf](https://hyprzepyx.info.gf)}
 
 </div>
 
@@ -45,7 +45,7 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 ## Quiet-Fracture
 
-> Widget system: None | Support: Yes
+> Widget system: None | Support: Yes | Working
 
 | Desktop                                          | Launcher                                           |
 | ------------------------------------------------ | -------------------------------------------------- |
@@ -57,7 +57,7 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 ## Kernel-Fault<sup>ignis</sup>
 
-> Widget system: ignis | Support: Yes
+> Widget system: ignis | Support: Yes | Working
 
 | Widgets                                        | Launcher                                         |
 | ---------------------------------------------- | ------------------------------------------------ |
@@ -128,7 +128,7 @@ hyprland
 
 ### Spectral-Horizon (quickshell)
 
-> Widget system: quickshell | Support: ❌
+> Widget system: quickshell | Support: No | Might not work dependencies removed
 
 | Widgets                                            | Launcher                                             |
 | -------------------------------------------------- | ---------------------------------------------------- |
@@ -140,7 +140,7 @@ hyprland
 
 ### Abyss (eww)
 
-> Widget system: eww | Support: Legacy
+> Widget system: eww | Support: Legacy | Still works
 
 | Code Editor                       | Lockscreen                                |
 | --------------------------------- | ----------------------------------------- |
@@ -152,7 +152,7 @@ hyprland
 
 ### Lumen (glossy)
 
-> Widget system: none | Support: ❌
+> Widget system: none | Support: No | Might work
 
 | Desktop                                 | Lockscreen                                |
 | --------------------------------------- | ----------------------------------------- |
