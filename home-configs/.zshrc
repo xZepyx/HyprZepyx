@@ -120,7 +120,7 @@ i() {
 }
 
 iu() {
-     paru -Sy && sudo paru -Su
+     paru -Sy "$*"
 }
 
 r() {
@@ -130,3 +130,5 @@ r() {
 u() {
     paru -Syu
 }
+
+

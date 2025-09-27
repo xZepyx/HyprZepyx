@@ -20,8 +20,8 @@ chosen=$(printf "$entries" | wofi --show dmenu)
 # Set selected wallpaper
 if [ -n "$chosen" ]; then
     full=$(find "$WALL_DIR" -type f -name "$chosen" | head -n1)
+    swww img "$full" -t grow --transition-duration 1 --transition-fps 75
     matugen image "$full"
-    swww img "$full" --transition-fps 60 --transition-type random
 fi 
 
 # Update hyprlock.conf (not needed now as matugen vars fix this issue)

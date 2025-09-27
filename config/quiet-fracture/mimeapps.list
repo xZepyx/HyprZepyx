@@ -1,0 +1,10 @@
+[Default Applications]
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+application/x-shellscript=org.gnome.TextEditor.desktop
+
+[Added Associations]
+application/x-shellscript=org.gnome.TextEditor.desktop;
