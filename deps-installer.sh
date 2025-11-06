@@ -17,6 +17,7 @@ packages=(
     "swww"
     "wofi"
     "nvim"
+    "ttf-material-symbols-variable-git"
     "nwg-dock-hyprland"
     "nautilus"
     "dolphin"
@@ -149,5 +150,5 @@ _installPackages "${packages[@]}"
 # ----------------------------------------------------------
 
 echo ":: All dependencies installed successfully."
-echo ":: You can now clone and use the HyprZepyx project without touching configs."
+echo ":: You can now use the HyprZepyx!"
 
