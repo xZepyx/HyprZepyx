@@ -190,15 +190,15 @@ hyprland
 
 > All of the items below should be checked and submitted to a issue
 
-*  Step 1. Before you submit
+#### Step 1. Before you submit
 
-    I have read the Troubleshooting and Usage pages.
-    I've successfully updated to the latest version following the guidance.
-    I've successfully updated the system packages to the latest.
+ *   I have read the Troubleshooting and Usage pages.
+ *  I've successfully updated to the latest version following the guidance.
+ *  I've successfully updated the system packages to the latest.
     
-*  Step 2. Quick diagnose info
+####  Step 2. Quick diagnose info
 
-*  Step 3. Describe the issue
+####  Step 3. Describe the issue
 
 
 
