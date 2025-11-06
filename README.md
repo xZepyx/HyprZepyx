@@ -182,7 +182,25 @@ hyprland
 * [Eww](https://elkowar.github.io/eww/)
 * [Waybar](https://github.com/Alexays/Waybar)
 
-> Special credits to end'4 and soromane's dotfiles for inspiration (**Spectral-Horizon theme**)
+> **Spectral-Horizon theme** is a fork of end4 dotfiles which removes AI and other unwanted stuff from it. 
+
+---
+
+## Issues
+
+> All of the items below should be checked and submitted to a issue
+
+*  Step 1. Before you submit
+
+    I have read the Troubleshooting and Usage pages.
+    I've successfully updated to the latest version following the guidance.
+    I've successfully updated the system packages to the latest.
+    
+*  Step 2. Quick diagnose info
+
+*  Step 3. Describe the issue
+
+
 
 ---
 
@@ -190,4 +208,3 @@ hyprland
 
 © 2025–2040 xZepyx (Aditya Yadav) [zepyxunderscore@gmail.com](mailto:zepyxunderscore@gmail.com)
 Licensed under **GNU GPLv3** — free to use, modify, and redistribute.
-
