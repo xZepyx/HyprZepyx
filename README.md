@@ -30,7 +30,8 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
 
 * **Maintainer:** xZepyx
 * **Contact:** [zepyxunderscore@gmail.com](mailto:zepyxunderscore@gmail.com)
-* **Project Duration:** 2025–2040 (ongoing development)
+* **Project Duration:** 2025–2027 (legacy)
+* **First created:** July 20th 2025
 
 ### Latest Updates
 
