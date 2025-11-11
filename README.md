@@ -1,8 +1,9 @@
+
 <div align="center">
 
-# 【 HyprZepyx Project 】
+#  HyprZepyx Project 
 
-A powerful, visually stunning Hyprland configuration built for **speed, workflow efficiency, and aesthetics**.
+A robust, high-performance Hyprland configuration, focused on workflow efficiency, customization, and a refined visual experience for developers and advanced Linux users.
 
 <p>
   <img src="https://img.shields.io/github/last-commit/xZepyx/HyprZepyx?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B" alt="Last Commit" />
@@ -14,198 +15,116 @@ A powerful, visually stunning Hyprland configuration built for **speed, workflow
   <img src="https://img.shields.io/badge/Maintenance-Actively%20Maintained-6BCB77?style=for-the-badge&logo=vercel&logoColor=D9E0EE&labelColor=1E202B" alt="Maintenance" />
 </p>
 
->  Our Website → [https://hyprzepyx.info.gf](https://hyprzepyx.info.gf)
+[Website](https://hyprzepyx.info.gf)
 
 </div>
 
 ---
 
-## Project Overview
+## Overview
 
-**HyprZepyx** is more than a configuration — it’s my personal vision. Designed for **developers and Linux enthusiasts**, it merges **aesthetic appeal** with **practical functionality**.
-
----
-
-## Maintainer & Project Info
-
-* **Maintainer:** xZepyx
-* **Contact:** [zepyxunderscore@gmail.com](mailto:zepyxunderscore@gmail.com)
-* **Project Duration:** 2025–2027 (legacy)
-* **First created:** July 20th 2025
-
-### Latest Updates
-
-* Added new theme **Quiet-Fracture** | Best theme so far
-* Adaptive color schemes
-* New **Waybar themes** with adaptive colors
-* Integrated **`Alt + A` command** for quick changes
+**HyprZepyx** delivers a modular, modern Hyprland setup, designed for users prioritizing speed, system clarity, and clean screens. The repository is frequently updated and structured for maintainability and ease of adjustment, supporting multiple color schemes and minimal distractions.
 
 ---
 
-# Screenshots & Visuals
+## Features
 
-## Quiet-Fracture
+- Comprehensive Hyprland configuration for advanced users
+- Multiple curated visual themes and color schemes
+- Adaptive and theme-specific Waybar integration
+- Clearly organized configs and modular scripts
+- Minimal system overhead, suitable for performance-oriented setups
+- Regular updates reflecting current Hyprland standards
 
-> Widget system: None | Support: Yes
+---
+
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/xZepyx/HyprZepyx.git ~/hyprzepyx
+    cd ~/hyprzepyx
+    ```
+2. Install dependencies:
+    ```bash
+    bash deps-installer.sh
+    ```
+3. Copy configuration files as required.
+4. Launch Hyprland:
+    ```bash
+    hyprland
+    ```
+
+Additional setup guidance can be found in docs or script comments.
+
+---
+
+## Recommended Environment
+
+- **GTK Theme:** Dark, minimalist (for optimal visual consistency)
+- **Fonts:** FiraCode, JetBrainsMono, or comparable monospaced fonts
+- **Icons:** Papirus, Tela, or similar icon sets
+- **Terminal Colors:** Solarized Dark, Gruvbox
+
+---
+
+## Screenshots
+
+### Quiet-Fracture
 
 | Desktop                                          | Launcher                                           |
 | ------------------------------------------------ | -------------------------------------------------- |
 | ![Widgets](.previews/quiet-fracture/desktop.png) | ![Launcher](.previews/quiet-fracture/launcher.png) |
 
-| Wallpaper Menu                             | Swaync                                          |
-| ------------------------------------------ | ----------------------------------------------- |
-| ![wall](.previews/quiet-fracture/wall.png) | ![desktop](.previews/quiet-fracture/swaync.png) |
-
-## Kernel-Fault<sup>ignis</sup>
-
-> Widget system: ignis | Support: Yes
+### Kernel-Fault<sup>ignis</sup>
 
 | Widgets                                        | Launcher                                         |
 | ---------------------------------------------- | ------------------------------------------------ |
 | ![Widgets](.previews/kernel-fault/widgets.png) | ![Launcher](.previews/kernel-fault/launcher.png) |
 
-| ControlCenter                          | Kitty                                        |
-| -------------------------------------- | -------------------------------------------- |
-| ![wall](.previews/kernel-fault/cc.png) | ![desktop](.previews/kernel-fault/kitty.png) |
-
-**Note:** Adjust paths in scripts if you have a custom setup.
-
----
-
-## Recommended Setup
-
-* **GTK Theme:** Dark minimalist themes for best visuals
-* **Fonts:** FiraCode, JetBrainsMono, or any monospaced font
-* **Icons:** Papirus, Tela, or flat icon packs
-* **Terminal Colors:** Solarized Dark or Gruvbox
-
-> Each app is **optimized for performance and minimal resource usage**.
-
----
-
-## Installation Guide
-
-1. Clone repository
-
-```bash
-git clone https://github.com/xZepyx/HyprZepyx.git ~/hyprzepyx
-cd ~/hyprzepyx
-```
-
-2. Install dependencies
-
-```bash
-bash deps-installer.sh # (prerequisites script is now deprecated)
-```
-
-3. Copy configs
-
-```bash
-# Manual step
-```
-
-4. Launch Hyprland
-
-```bash
-hyprland
-```
-
----
-
-> 🖼️ Wallpapers: [Wallbank](https://github.com/xZepyx/Wallbank)
+Additional previews and themes are available under `.previews/`.
 
 ---
 
 ## Troubleshooting
 
-* Waybar icons missing → Install FontAwesome or Material Icons
-* Eww widgets missing → Run `eww daemon` before Hyprland
-* Rofi launcher errors → Check `rofi/config.rasi` paths
-* Hyprland crashes → Inspect `~/.local/share/hyprland.log`
+- **Waybar icons missing:** Install FontAwesome or Material Icons.
+- **Eww widgets don’t appear:** Ensure `eww daemon` is running before launching Hyprland.
+- **Rofi launcher errors:** Verify path correctness in `rofi/config.rasi`.
+- **Hyprland crash:** Review logs in `~/.local/share/hyprland.log` for diagnostics.
 
 ---
 
-## Old Stuff
+## Roadmap
 
-### Spectral-Horizon (quickshell)
-
-> Widget system: quickshell | Support: ❌
-
-| Widgets                                            | Launcher                                             |
-| -------------------------------------------------- | ---------------------------------------------------- |
-| ![Widgets](.previews/spectral-horizon/widgets.png) | ![Launcher](.previews/spectral-horizon/launcher.png) |
-
-| Wallpaper Menu                               | Desktop                                            |
-| -------------------------------------------- | -------------------------------------------------- |
-| ![wall](.previews/spectral-horizon/wall.png) | ![desktop](.previews/spectral-horizon/desktop.png) |
-
-### Abyss (eww)
-
-> Widget system: eww | Support: Legacy
-
-| Code Editor                       | Lockscreen                                |
-| --------------------------------- | ----------------------------------------- |
-| ![Code](.previews/Abyss/Code.png) | ![Hyprlock](.previews/Abyss/hyprlock.png) |
-
-| Wallpaper Switcher                                  | Eww Minimal                                     |
-| --------------------------------------------------- | ----------------------------------------------- |
-| ![Rofi Wall](.previews/Abyss/rofi-wayland-wall.png) | ![Eww Minimal](.previews/Abyss/eww-minimal.png) |
-
-### Lumen (glossy)
-
-> Widget system: none | Support: ❌
-
-| Desktop                                 | Lockscreen                                |
-| --------------------------------------- | ----------------------------------------- |
-| ![Desktop](.previews/Lumen/desktop.png) | ![Hyprlock](.previews/Lumen/hyprlock.png) |
-
-| Rofi Apps                                 | Terminal                                  |
-| ----------------------------------------- | ----------------------------------------- |
-| ![Rofi Apps](.previews/Lumen/rofi-op.png) | ![Terminal](.previews/Lumen/Terminal.png) |
+- Transition from Wofi to Walker
+- Enhanced wallpaper switcher
+- Unified installation script
+- Modular dependency management per theme
 
 ---
 
-## Todo
+## Maintainer
 
-* Replace Wofi with Walker (planned)
-* Improved Wallpaper Switcher
-* Provide installation script
-* Separate dependencies by theme
+- **Primary Contact:** xZepyx  
+- **Email:** [zepyxunderscore@gmail.com](mailto:zepyxunderscore@gmail.com)
 
 ---
 
-## Special Thanks
+## Acknowledgments
 
-* [Hyprland](https://github.com/hyprwm/hyprland)
-* [Quickshell](https://github.com/quickshell-mirror/quickshell)
-* [Ignis Project](https://github.com/ignis-sh/ignis)
-* [Rofi](https://github.com/davatorium/rofi)
-* [Eww](https://elkowar.github.io/eww/)
-* [Waybar](https://github.com/Alexays/Waybar)
+- [Hyprland](https://github.com/hyprwm/hyprland)
+- [Quickshell](https://github.com/quickshell-mirror/quickshell)
+- [Ignis Project](https://github.com/ignis-sh/ignis)
+- [Rofi](https://github.com/davatorium/rofi)
+- [Eww](https://elkowar.github.io/eww/)
+- [Waybar](https://github.com/Alexays/Waybar)
 
-> **Spectral-Horizon theme** is a fork of end4 dotfiles which removes AI and other unwanted stuff from it. 
-
----
-
-## Issues
-
-> All of the items below should be checked and submitted to a issue
-
-#### Step 1. Before you submit
-
- *   I have read the Troubleshooting and Usage pages.
- *  I've successfully updated to the latest version following the guidance.
- *  I've successfully updated the system packages to the latest.
-    
-####  Step 2. Quick diagnose info
-
-####  Step 3. Describe the issue
-
-
+_The Spectral-Horizon theme is forked from end4 dotfiles, with modifications for privacy and performance._
 
 ---
 
 ## License
 
-© 2025–2040 xZepyx (Aditya Yadav) [zepyxunderscore@gmail.com](mailto:zepyxunderscore@gmail.com)
-Licensed under **GNU GPLv3** — free to use, modify, and redistribute.
+© 2025–2040 xZepyx (Aditya Yadav)  
+Licensed under GNU GPLv3.
