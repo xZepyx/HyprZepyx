@@ -9,7 +9,7 @@ A robust, high-performance Hyprland configuration, focused on workflow efficienc
 ![](https://img.shields.io/github/stars/xZepyx/HyprZepyx?style=for-the-badge&logo=andela&color=86dbd7&logoColor=D9E0EE&labelColor=1E202B)
 ![](https://img.shields.io/github/repo-size/xZepyx/HyprZepyx?color=86dbce&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
 
-[Website](https://hyprzepyx.info.gf)
+[Website](https://zepyx.home.kg/hyprzepyx)
 
 </div>
 
